@@ -1,0 +1,16 @@
+django==1.4.1
+mysql-python
+uwsgi
+simplejson
+coffin==0.3.7
+django-annoying==0.7.7
+PIL
+jinja2
+anyjson
+xlwt
+python-rest-client==0.3
+pymongo
+dnspython
+gevent
+threadpool
+celery

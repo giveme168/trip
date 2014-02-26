@@ -1,0 +1,17 @@
+
+<script type="text/javascript" src="{{STATIC_URL}}js/jquery.noty.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/top.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/default.js"></script>
+<script type="text/javascript">
+    {% if messages %}
+        {% for message in messages %}
+            noty({ 
+                'text': '{{message}}',
+                'layout': 'topCenter',
+                "type":"{{ message.tags }}",
+                'timeout': 5000,
+                'closeWith': ['hover'] // ['click', 'button', 'hover']
+            });
+        {% endfor %}
+    {% endif %}
+</script>

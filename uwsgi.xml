@@ -1,0 +1,9 @@
+<uwsgi>
+    <socket>127.0.0.1:9000</socket>
+    <master/>
+    <chdir>/var/www/igame</chdir>
+    <pythonpath>..</pythonpath>
+    <processes>8</processes>
+    <module>django_uwsgi</module>
+    <daemonize>/var/log/igame.log</daemonize>
+</uwsgi>

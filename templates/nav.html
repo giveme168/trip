@@ -1,0 +1,45 @@
+{% load url from future %}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <a href="#" class='navbar-brand'> <img src="/static/images/login/logo.png"></a>      
+        <ul class="nav">
+            {% if power.http_show %}
+            <li id="http_detection"><a href="/http_detection/{{user_id}}/task/index">质量探测管理</a>
+            </li>
+            {% endif %}
+            {% if power.dns_show %}
+            <li id="dns_detection"><a href="/dns_detection/{{user_id}}/task/index">DNS解析管理</a>
+            </li>
+            {% endif %}
+            {% if power.monitor_show %}
+            <li id="monitor"><a href="/monitor/{{user_id}}/http/index">监控管理</a>
+            </li>
+            {% endif %}
+            <li id="log"><a href="/log/{{user_id}}/details/index">日志管理</a></li>
+            {% if is_super %}
+                <li id='auth'><a href="/auth/{{user_id}}/group/index">角色权限管理</a></li>
+            {% endif %}
+        </ul>
+        <div class="pull-right">
+            <ul class="nav">
+                <li class=""><a href="#">欢迎您，{{user}}<b class="caret"></b></a>
+                    <ul>
+                        <li><a href="/account/index">个人信息</a></li>
+                        <!--<li><a href="#">用户信息管理</a></li>
+                        <li><a href="#">修改个人信息</a></li>
+                        <li><a href="#">用户信息管理</a></li>
+                        <li><a href="#">添加用户</a></li>-->
+                        <li><a href="/logout">退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+  $(document).ready(function(){
+    var pathname = window.location.pathname;
+    var path_name = pathname.split("/")
+    $("#" + path_name[1]).addClass("active");
+  })
+</script>
