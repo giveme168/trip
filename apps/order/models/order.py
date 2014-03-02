@@ -14,6 +14,8 @@ class Orders(models.Model):
     product = models.IntegerField(u'所属产品', max_length=10, help_text=u'所属产品')
     price = models.FloatField(u'价钱', max_length=64, help_text=u'价钱')
     product_info = models.TextField()
+    create_time = models.DateTimeField('创建时间', auto_now_add=True, default=datetime.datetime.now(), help_text='创建时间')
 
     class Meta:
         app_label = 'order'
+        ordering = ['-create_time']

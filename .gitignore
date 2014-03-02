@@ -3,7 +3,6 @@
 *.sql
 *.tar.gz
 .DS_Store
-CCDH.db
 *.pyc
-settings.py
-static/upload/*
+.coverage
+*.db
