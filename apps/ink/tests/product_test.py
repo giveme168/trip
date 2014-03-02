@@ -8,7 +8,7 @@ from apps.product.models.product import Products
 
 import simplejson as json
 
-class ProductTest(TestCase):
+class OrderTest(TestCase):
     def setUp(self):
         user = User()
         user.is_superuser = 1
@@ -43,7 +43,7 @@ class ProductTest(TestCase):
         self.assertEqual(response.status_code,302)
 
     def test_product_update(self):
-    	params = {}
+        params = {}
         params['name'] = u'海南七日游' 
         params['price'] = 14
         params['price_type'] = 1
@@ -78,9 +78,9 @@ class ProductTest(TestCase):
         self.assertEqual(response.status_code,302)
 
     def test_product_delete(self):
-    	response = self.c.post('/ink/product/1000/delete')
+        response = self.c.post('/ink/product/1000/delete')
         self.assertEqual(response.status_code,200)
 
     def test_product_index(self):
-    	response = self.c.get('/ink/product/index')
+        response = self.c.get('/ink/product/index')
         self.assertEqual(response.status_code,200)
