@@ -45,7 +45,7 @@ class Products_Tags(models.Model):
 #产品评价
 class Product_Reviews(models.Model):
     TYPE_CHOICES = ((1,'购买前评价'),(2,'购买后评价'))
-    prodect = models.ForeignKey(Products)
+    product = models.ForeignKey(Products)
     user = models.ForeignKey(User)
     type = models.IntegerField(u'评价类型',max_length=2, choices=TYPE_CHOICES, help_text=u'评价类型')
     content = models.CharField(u'内容',max_length=254,help_text=u'内容')
