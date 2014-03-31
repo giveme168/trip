@@ -12,6 +12,30 @@ from apps.product.models.product import Products
 
 
 @render_to('ink/product/index.html')
+def rend_data(request):
+    product = Products()
+    product.name = u'海南七日游' 
+    product.price = 1
+    product.price_type = 1
+    product.total_price = 1
+    product.order_time = datetime.datetime.strptime('2014-03-31','%Y-%m-%d')
+    product.trip_start_time = datetime.datetime.strptime('2014-06-15','%Y-%m-%d')
+    product.trip_end_time = datetime.datetime.strptime('2014-09-15','%Y-%m-%d')
+    product.key_desc = u'海南七日游'
+    product.start_city = u'北京'
+    product.end_city = u'海南'
+    product.pics = ''
+    product.trips = '游艇'
+    product.date_count = len(json.loads(json.dumps([{'name':u'第一天'},{'name':u'第二天'}])))
+    product.user = request.user
+    try:
+        product.save()
+        return HttpResponseRedirect('/ink/product/index')
+    except:
+        return {}
+    return {}
+
+@render_to('ink/product/index.html')
 def index(request):
     name = request.REQUEST.get('name','')
     page = int(request.REQUEST.get('page',1))

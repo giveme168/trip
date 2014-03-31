@@ -113,7 +113,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.contrib.messages.context_processors.messages',
-    #'contrib.context_processors.current_user',
+    'contrib.context_processors.current_user',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -129,10 +129,10 @@ MIDDLEWARE_CLASSES = (
 
 
 LOGIN_URL = '/login'
-LOGIN_REDIRECT_URL = '/login_rend'
+LOGIN_REDIRECT_URL = '/index'
 
 LOGIN_REQUIRED_URLS = (
-        r'/login_rend',
+        r'/index',
 )
 
 

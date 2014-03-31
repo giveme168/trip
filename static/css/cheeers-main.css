@@ -1,0 +1,153 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 全局样式 */
+
+/* 首页 */
+#chrs-top-nav {
+	position:absolute;
+	top:18px;
+	right:24px;
+	display:block;
+	z-index:99;
+	overflow:hidden;
+}
+#chrs-top-nav a {
+	color:#fff;
+}
+#chrs-homepage-hero-img {
+	padding:0;
+}
+#chrs-homepage-main-carousel {
+	position:relative;
+}
+#chrs-homepage-main-search #chrs-homepage-search-box #btn-chrs-main-search {
+	margin:0;
+	border:none;
+	border-radius:20px;
+	padding:0;
+	width:40px;
+	height:40px;
+	background:url(/static/images/desktop/search_bar_button_homepage.png) no-repeat;
+}
+#chrs-homepage-playways {
+	position:relative;
+	box-shadow:#a4a4a4 0 6px 10px;
+	z-index:999;
+}
+#chrs-homepage-members {
+	position:relative;
+	padding:38px 0;
+	background:#ebeae6;
+	z-index:99;
+}
+#chrs-homepage-members #chrs-homepage-thumbnails .thumbnail {
+	border:none;
+	padding:0;
+	background:none;
+}
+#homepage footer {
+	padding:18px 0 18px;
+	color:#949494;
+	background:#666;
+}
+
+@media (min-width:768px) {
+	#chrs-homepage-main-carousel .item img {
+		width:100% !important;
+		height:auto;
+	}
+	#chrs-homepage-main-search {
+		position:absolute;
+		top:50%;
+		left:50%;
+		margin-top:-120px;
+		margin-left:-390px;
+		width:780px;
+		overflow:hidden;
+		z-index:99;
+	}
+	#chrs-homepage-main-search #chrs-homepage-search-box {
+		position:relative;
+		display:inline-block;
+		margin:88px 0;
+		border-radius:34px;
+		padding:10px;
+		padding-left:74px;
+		/* Fallback for web browsers that doesn't support RGBa */
+		background: rgb(0, 0, 0);
+		/* RGBa with 0.6 opacity */
+		background: rgba(0, 0, 0, 0.6);
+		/* For IE 5.5 - 7*/
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+		/* For IE 8*/
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+		z-index:199;
+	}
+	#logo {
+		position:relative;
+		display:inline-block;
+		float:left;
+		margin-right:-80px;
+		width:340px;
+		height:170px;
+		background:url(/static/images/desktop/logo_homepage_without_shadow.png) no-repeat;
+		z-index:299;
+	}
+	#logo span {
+		visibility:hidden;
+	}
+	#chrs-homepage-playways .thumbnail {
+		border:none;
+	}
+	#chrs-homepage-playways .thumbnail h3 {
+		margin-top:0;
+		color:#7f7f7f;
+		font-size:20px;
+		text-align:center;
+	}
+	#chrs-homepage-playways .thumbnail p {
+		color:#FF6300;
+		font-size:24px;
+	}
+	#chrs-homepage-playways .thumbnail p small {
+		font-size:12px;
+	}
+	#chrs-homepage-members h2 {
+		margin-bottom:42px;
+	}
+	#chrs-homepage-members #chrs-homepage-thumbnails .thumbnail p {
+		color:#666;
+		font-size:24px;
+		line-height:36px;
+	}
+	#chrs-homepage-links {
+		padding:38px 0 38px 68px;
+	}
+	#chrs-homepage-links .media .media-heading a {
+		color:#333;
+	}
+	#chrs-homepage-links ul.list-unstyled li .text-primary {
+		display:block;
+		margin:0 0 28px;
+		color:#666;
+		font-size:12px;
+	}
+	#chrs-homepage-links ul.list-unstyled li a {
+		color:#FF6300;
+		font-size:12px;
+		line-height:18px;
+	}
+	/* Footer */
+	#homepage footer ul.list-unstyled li a {
+		margin-right:34px;
+	}
+}
+@media (min-width:1200px) {
+
+}
+@media (max-width:768px) {
+	#chrs-homepage-main-carousel .item img {
+		height:100% !important;
+	}
+}

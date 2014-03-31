@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>骑鹅旅行</title>
+
+<!-- Bootstrap -->
+<link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="{{ STATIC_URL }}css/cheeers-main.css" rel="stylesheet">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="{{ STATIC_URL }}js/html5shiv.js"></script>
+      <script src="{{ STATIC_URL }}js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="homepage">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-lg-12" id="chrs-homepage-hero-img">
+      <div id="chrs-homepage-main-carousel" class="carousel slide" data-ride="carousel">
+        <ul class="list-inline list-unstyled" id="chrs-top-nav">
+          {% if user.username %}
+          <li class="hidden-xs"><a href="#">欢迎您：{{user.username}}</a></li>
+          <li><a href="#"><img src="{{ STATIC_URL }}images/desktop/avatar_icon.png" width="36" height="36"></a></li>
+          <li class="hidden-xs"><a href="#"><img src="{{ STATIC_URL }}images/desktop/button_01.png" width="75" height="25"></a></li>
+          {% else %}
+          <li class="hidden-xs"><a href="#">注册</a></li>
+          <li class="hidden-xs"><a href="/login/">登录</a></li>
+          <li><a href="#"><img src="{{ STATIC_URL }}images/desktop/avatar_icon.png" width="36" height="36"></a></li>
+          <li class="hidden-xs"><a href="#"><img src="{{ STATIC_URL }}images/desktop/button_01.png" width="75" height="25"></a></li>
+          {% endif %}
+        </ul>
+        <div id="chrs-homepage-main-search">
+          <h1 id="logo"><span>Cheeers 骑鹅旅行</span></h1>
+          <form class="form-inline" id="chrs-homepage-search-box" role="form">
+            <div class="form-group">
+              <label class="sr-only" for="whereToGo">你想去哪里？</label>
+              <input type="email" class="form-control" id="whereToGo" placeholder="你想去哪里？">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="whatToPlay">你想玩什么？</label>
+              <input type="password" class="form-control" id="whatToPlay" placeholder="你想玩什么？">
+            </div>
+            <button type="submit" class="btn btn-default" id="btn-chrs-main-search"></button>
+          </form>
+        </div>
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#chrs-homepage-main-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#chrs-homepage-main-carousel" data-slide-to="1"></li>
+          <li data-target="#chrs-homepage-main-carousel" data-slide-to="2"></li>
+        </ol>
+        
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active"><img src="{{ STATIC_URL }}images/desktop/bg_01.jpg" alt="私人直升机带你游览大堡礁，澳大利亚￥1060" class="img-responsive">
+            <div class="carousel-caption">
+              <p>私人直升机带你游览大堡礁，澳大利亚￥1060</p>
+            </div>
+          </div>
+          <div class="item"><img src="{{ STATIC_URL }}images/desktop/4631196205_db679d17e5_o.jpg" alt="私人直升机带你游览大堡礁，澳大利亚￥1060" class="img-responsive">
+            <div class="carousel-caption">
+              <p>私人直升机带你游览大堡礁，澳大利亚￥1060</p>
+            </div>
+          </div>
+          <div class="item"><img src="{{ STATIC_URL }}images/desktop/2454749019_8b0c170f55_o.jpg" alt="私人直升机带你游览大堡礁，澳大利亚￥1060" class="img-responsive">
+            <div class="carousel-caption">
+              <p>私人直升机带你游览大堡礁，澳大利亚￥1060</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Controls --> 
+        <a class="left carousel-control" href="#chrs-homepage-main-carousel" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a> <a class="right carousel-control" href="#chrs-homepage-main-carousel" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a> </div>
+    </div>
+  </div>
+</div>
+<section id="chrs-homepage-playways">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <h2 class="text-center">现在就在<strong>骑鹅旅行</strong>预订你的下一次旅行吧！<small class="clearfix">我们为你提供便捷的出行预订服务还有更多的旅行灵感。</small></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <div class="thumbnail"><a href="#"><img src="{{ STATIC_URL }}images/desktop/button_icon_01.png" alt="游艇"></a>
+          <div class="caption">
+            <h3>游艇</h3>
+            <p class="text-center">238<small>个</small></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <div class="thumbnail"><a href="#"><img src="{{ STATIC_URL }}images/desktop/button_icon_02.png" alt="美食"></a>
+          <div class="caption">
+            <h3>美食</h3>
+            <p class="text-center">3,215<small>个</small></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <div class="thumbnail"><a href="#"><img src="{{ STATIC_URL }}images/desktop/button_icon_03.png" alt="帐篷"></a>
+          <div class="caption">
+            <h3>帐篷</h3>
+            <p class="text-center">2,051<small>个</small></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <div class="thumbnail"><a href="#"><img src="{{ STATIC_URL }}images/desktop/button_icon_04.png" alt="自驾"></a>
+          <div class="caption">
+            <h3>自驾</h3>
+            <p class="text-center">2,051<small>个</small></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <div class="thumbnail"><a href="#"><img src="{{ STATIC_URL }}images/desktop/button_icon_05.png" alt="潜水"></a>
+          <div class="caption">
+            <h3>潜水</h3>
+            <p class="text-center">2,051<small>个</small></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <div class="thumbnail"><a href="#"><img src="{{ STATIC_URL }}images/desktop/button_icon_06.png" alt="更多玩法"></a>
+          <div class="caption">
+            <h3>更多玩法</h3>
+            <p class="text-center">25,309<small>个</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hidden-xs" id="chrs-homepage-members">
+  <div class="container">
+    <div class="row" id="chrs-homepage-thumbnails">
+      <h2 class="text-center">在这里，跟<span class="text-warning">3568</span>位骑士一起Cheeers!</h2>
+      <div class="col-sm-6 col-md-6 col-lg-6">
+        <div class="thumbnail"><a href="#"><img src="{{ STATIC_URL }}images/desktop/gallery_01_with_both_image_and_signature.png" class="img-responsive"></a>
+          <div class="caption">
+            <p><img src="{{ STATIC_URL }}images/desktop/quotation_marks_left.png">　螺旋桨其实只令飞行员凉快，当大风扇停了，基本上会看到飞行员开始冒汗了……<img src="{{ STATIC_URL }}images/desktop/quotation_marks_right.png"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+          <div class="thumbnail"><a href="#"><img src="{{ STATIC_URL }}images/desktop/gallery_02_with_both_image_and_signature.png" class="img-responsive"></a></div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+          <div class="thumbnail"><a href="#"><img src="{{ STATIC_URL }}images/desktop/gallery_03_with_both_image_and_signature.png" class="img-responsive"></a></div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+          <div class="thumbnail"><a href="#"><img src="{{ STATIC_URL }}images/desktop/gallery_04_with_both_image_and_signature.png" class="img-responsive"></a></div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+          <div class="thumbnail"><a href="#"><img src="{{ STATIC_URL }}images/desktop/gallery_05_with_both_image_and_signature.png" class="img-responsive"></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container" id="chrs-homepage-links">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="media"> <a class="pull-left" href="#"> <img class="media-object" src="{{ STATIC_URL }}images/desktop/flag_uk.png" alt="Cheeers in English"> </a>
+          <div class="media-body">
+            <h4 class="media-heading"><a href="#">Cheeers in English</a></h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 hidden-xs">
+        <ul class="list-unstyled">
+          <li><span class="text-primary">发现</span></li>
+          <li><a href="#">信任与安全</a></li>
+          <li><a href="#">邀请好友</a></li>
+          <li><a href="#">Cheeers灵感</a></li>
+          <li><a href="#">Cheeers骑士</a></li>
+          <li><a href="#">移动版</a></li>
+          <li><a href="#">为什么要旅行？</a></li>
+          <li><a href="#">做个文明的旅行家</a></li>
+          <li><a href="#">网站地图</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 hidden-xs">
+        <ul class="list-unstyled">
+          <li><span class="text-primary">公司信息</span></li>
+          <li><a href="#">关于</a></li>
+          <li><a href="#">招贤纳士</a></li>
+          <li><a href="#">新闻</a></li>
+          <li><a href="#">博客</a></li>
+          <li><a href="#">帮助</a></li>
+          <li><a href="#">政策</a></li>
+          <li><a href="#">供应商义务</a></li>
+          <li><a href="#">条款与隐私</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 hidden-xs">
+        <ul class="list-unstyled">
+          <li><span class="text-primary">关注</span></li>
+          <li><a href="#">微信</a></li>
+          <li><a href="#">新浪微博</a></li>
+          <li><a href="#">Flickr</a></li>
+          <li><a href="#">Google+</a></li>
+          <li>
+            <p>&nbsp;</p>
+          </li>
+          <li><img src="{{ STATIC_URL }}images/desktop/slogan.png" alt="预订你的旅行灵感"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="row">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><span>合作媒体：</span></li>
+            <li><a href="#"><img src="{{ STATIC_URL }}images/desktop/logo_cnt.png" alt=""></a></li>
+            <li><a href="#"><img src="{{ STATIC_URL }}images/desktop/logo_tc.png" alt=""></a></li>
+            <li><a href="#"><img src="{{ STATIC_URL }}images/desktop/logo_bloomberg_business.png" alt=""></a></li>
+            <li><a href="#"><img src="{{ STATIC_URL }}images/desktop/logo_tl.png" alt=""></a></li>
+        </ul>
+        <a href="#" class="pull-right"><img src="{{ STATIC_URL }}images/desktop/logo_webede.png" alt="webelievedesign"></a>
+        <div class="clearfix"></div>
+        </div>
+    </div>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="{{ STATIC_URL }}js/jquery-1.10.2.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script> 
+<script>
+$(document).ready(function() {
+    $('#chrs-homepage-main-carousel').carousel({
+        interval: 4000
+    });
+})
+</script>
+</body>
+</html>
