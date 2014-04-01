@@ -3,7 +3,67 @@
 
 {% block content %}
 <div class="container" style="min-height:2200px;">
-	<img src="{{ STATIC_URL }}images/Cheeers_product_info.png" width="100%"/>
-	<a href="/order/1000/alipay" class="btn btn-success" style='float:right;'>立即拥有</a>
+	<div id="mjs" class="tip"></div>
+	<img id='img' src="{{ STATIC_URL }}images/Cheeers_product_info.png" style="width:1100px;height:1800px;" onmousemove="getMousePoint(event,'')" onclick="getMousePoint(event,'click')"/>
 </div>
+<script type="text/javascript"> 
+//x=780,1062
+//y=300,340
+function getX(){  
+		var obj = document.getElementById('img')
+        var parObj=obj;    
+        var left=obj.offsetLeft;    
+        while(parObj=parObj.offsetParent){    
+            left+=parObj.offsetLeft;    
+        }    
+        return left;    
+    }    
+    
+    function getY(){ 
+    	var obj = document.getElementById('img')
+        var parObj=obj;    
+        var top=obj.offsetTop;    
+        while(parObj = parObj.offsetParent){    
+            top+=parObj.offsetTop;    
+        }    
+     return top;    
+}  
+function getMousePoint(ev,type) {
+
+    var x = y = 0,
+
+        doc = document.documentElement,
+
+        body = document.body;
+
+    if(!ev) ev=window.event;
+
+    if (window.pageYoffset) {//pageYoffset是Netscape特有
+
+        x = window.pageXOffset;
+
+        y = window.pageYOffset;
+
+    }else{
+
+        x = (doc && doc.scrollLeft || body && body.scrollLeft || 0) - (doc && doc.clientLeft || body && body.clientLeft || 0);
+
+        y = (doc && doc.scrollTop  || body && body.scrollTop  || 0) - (doc && doc.clientTop  || body && body.clientTop  || 0);
+
+    }
+
+    x += ev.clientX - getX();
+
+    y += ev.clientY - getY();
+    if (780<=x&&x<=1062&&300<=y&&y<=340){
+    	$("img").css("cursor","pointer") 
+    	if(type == 'click'){
+			window.location.href='/order/1000/alipay'
+		}
+    }else{
+    	$("img").css("cursor","") 
+    }
+
+}
+</script>
 {% endblock %}
