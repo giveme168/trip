@@ -14,8 +14,8 @@ from util.alipay import pay_req
 
 
 def alipay(request,pid):
-    if not request.user.id:
-        return HttpResponseRedirect('/login/?path=/product/%s/show/'%(pid))
+    #if not request.user.id:
+    #    return HttpResponseRedirect('/login/?path=/product/%s/show/'%(pid))
     product = Products.objects.get(id=pid)
     notify_url_default = 'http://www.gettrip.com/alipay/notify'
     return_url_default = 'http://www.gettrip.com/alipay/redirect'
