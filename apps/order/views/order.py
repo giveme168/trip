@@ -10,6 +10,17 @@ import datetime
 from contrib.shortcuts import json_response
 from apps.product.models.product import Products
 from apps.order.models.order import Orders
+from util.alipay import pay_req
+
+
+def alipay(request,pid):
+    if not request.user.id:
+        return HttpResponseRedirect('/login/?path=/product/%s/show/'%(pid))
+    product = Products.objects.get(id=pid)
+    notify_url_default = 'http://www.gettrip.com/alipay/notify'
+    return_url_default = 'http://www.gettrip.com/alipay/redirect'
+    ret_url = pay_req(product.id, product.name, product.name, product.price, notify_url = notify_url_default, return_url = return_url_default)
+    return HttpResponseRedirect(ret_url)
 
 @render_to('ink/product/index.html')
 def index(request):

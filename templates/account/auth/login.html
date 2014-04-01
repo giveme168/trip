@@ -46,12 +46,13 @@ body {
 </style>
 <div class="container">
 
-      <form class="form-signin" method="post" action="{% url 'django.contrib.auth.views.login' %}">
+      <form class="form-signin" method="post" action="/login/">
         {% csrf_token %}
         <h2 class="form-signin-heading">Please sign in</h2>
-        {% if form.errors %}
-                    <p>Your username and password didn't match. Please try again.</p>
-                    {% endif %}
+        <input type="hidden" value="{{path}}" name="path">
+        {% if message %}
+            <p>{{message}}</p>
+        {% endif %}
         <input type="text" class="form-control" placeholder="Email address" name="username" required autofocus>
         <input type="password" class="form-control" placeholder="Password" name="password" required>
         <label class="checkbox">

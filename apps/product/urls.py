@@ -7,3 +7,8 @@ urlpatterns = patterns('apps.product.views.reviews',
     url(r'^reviews/(?P<rid>\d+)/update$','update',name='product_reviews_update'),
     url(r'^reviews/(?P<rid>\d+)/delete$','delete',name='product_reviews_delete'),
 )
+
+urlpatterns += patterns('apps.product.views.product',
+    url(r'^index/$','index',name='product_index'),
+    url(r'^(?P<pid>\d+)/show/$','show',name='product_show'),
+)
