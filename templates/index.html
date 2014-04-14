@@ -18,9 +18,8 @@
 </head>
 <body id="homepage">
 <div class="container-fluid" style="padding-left: 0px;padding-right: 0px">
-  <a href="/product/index/">
-    <img src="{{ STATIC_URL }}images/cheeers_homepage_v1.1.jpg" width="100%" />
-  </a>
+    <div id="mjs" class="tip"></div>
+    <img id='img' src="{{ STATIC_URL }}images/cheeers_homepage_v1.1.jpg" style="width:1265px;height:1800px;" onmousemove="getMousePoint(event,'')" onclick="getMousePoint(event,'click')" />
 </div>
 <!--<div class="container-fluid">
   <div class="row">
@@ -244,6 +243,70 @@ $(document).ready(function() {
         interval: 4000
     });
 })
+//x=780,1062
+//y=300,340
+function getX(){  
+    var obj = document.getElementById('img')
+        var parObj=obj;    
+        var left=obj.offsetLeft;    
+        while(parObj=parObj.offsetParent){    
+            left+=parObj.offsetLeft;    
+        }    
+        return left;    
+    }    
+    
+    function getY(){ 
+      var obj = document.getElementById('img')
+        var parObj=obj;    
+        var top=obj.offsetTop;    
+        while(parObj = parObj.offsetParent){    
+            top+=parObj.offsetTop;    
+        }    
+     return top;    
+}  
+function getMousePoint(ev,type) {
+
+    var x = y = 0,
+
+        doc = document.documentElement,
+
+        body = document.body;
+
+    if(!ev) ev=window.event;
+
+    if (window.pageYoffset) {//pageYoffset是Netscape特有
+
+        x = window.pageXOffset;
+
+        y = window.pageYOffset;
+
+    }else{
+
+        x = (doc && doc.scrollLeft || body && body.scrollLeft || 0) - (doc && doc.clientLeft || body && body.clientLeft || 0);
+
+        y = (doc && doc.scrollTop  || body && body.scrollTop  || 0) - (doc && doc.clientTop  || body && body.clientTop  || 0);
+
+    }
+
+    x += ev.clientX - getX();
+
+    y += ev.clientY - getY();
+
+    if (515<=x&&x<=587&&1565<=y&&y<=1575){
+      $("img").css("cursor","pointer") 
+      if(type == 'click'){
+        window.location.href='/safe/'
+      }
+    }
+    else if (0<=x&&x<=1265&&0<=y&&y<=1500){
+      $("img").css("cursor","pointer") 
+      if(type == 'click'){
+        window.location.href='/safe/'
+      }
+    }else{
+      $("img").css("cursor","") 
+    }
+}
 </script>
 <div style="display:none;">
       <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5828818'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/stat.php%3Fid%3D5828818%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>

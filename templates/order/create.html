@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>骑鹅旅行</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="{{ STATIC_URL }}js/jquery.js" type="text/javascript"></script>
+  </script> 
+  </head>
+<body>
+<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css"/>
+<!--  header -->
+<div id="header">
+	<div class="logo"><a href="/"><img src="{{ STATIC_URL }}images/live/logo.jpg" width="145" height="48" /></a></div>
+    <div class="search"><input name="" type="text" class="txt" /></div>
+    <div class="nav">
+    	<ul>
+        	<li><a href="#">旅行灵感</a></li>
+            <li><a href="#">注册</a></li>
+            <li><a href="#">登录</a></li>
+            <li><a href="#"><input name="" type="button" class="btn" /></a></li>
+        </ul>
+    </div>
+</div>
+<!--  banner  -->
+<div class="contents-pay">
+	<div class="conwrap">
+    	<div class="conwrapL">
+        	<h1>确认付款</h1>
+            <div class="city-box">
+            	<p>出发城市</p>
+                <div class="city">
+                    <div class="checked">北京</div>
+                </div>
+            </div>
+        	<div class="message">
+            	<h3>联系人信息</h3>
+                <div class="linkman">
+                	<div class="left"><a href="#"><img src="{{ STATIC_URL }}images/live/user1.jpg" width="78" height="92" /></a><span>选择常用联系人</span></div>
+                    <div class="right"><a href="#"><img src="{{ STATIC_URL }}images/live/arrow2.jpg" width="13" height="7" /></a></div>
+                </div>
+                <div class="tab1">
+                	<table border="0" cellpadding="0" cellspacing="0">
+                    	<tr>
+                       		<td width="142" class="lft">中文 姓</td>
+                       		<td width="139"><input name="" type="text" class="txt1" /></td>
+                       		<td width="142" class="lft">中文 名</td>
+                       		<td width="139"><input name="" type="text" class="txt1" /></td> 
+                        </tr>
+                        <tr>
+                        	<td class="lft">拼音/英文 姓</td>
+                        	<td><input name="" type="text" class="txt1" /></td>
+                        	<td class="lft">拼音/英文 名</td>
+                        	<td><input name="" type="text" class="txt1" /></td>
+                        </tr>
+                        <tr>
+                        	<td class="lft">手机号</td>
+                        	<td><input name="" type="text" class="txt1" /></td>
+                        	<td colspan="2"><input name="" type="text" class="txt2" /></td>
+                        </tr>
+                        <tr>
+                        	<td class="lft">邮箱</td>
+                            <td colspan="3"><input name="" type="text" class="txt3" /></td>
+                        </tr>
+                        <tr>
+                        	<td class="lft"></td>
+                        	<td colspan="3"><input name="" type="checkbox" value="" class="txt4" />&nbsp;&nbsp;保存为常用联系人</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="message">
+            	<h3>旅客信息</h3>
+                <div class="linkman">
+                	<div class="left"><a href="#"><img src="{{ STATIC_URL }}images/live/user1.jpg" width="78" height="92" /></a><span>第1位旅客</span></div>
+                    <div class="right"><a href="#"><img src="{{ STATIC_URL }}images/live/arrow2.jpg" width="13" height="7" /></a></div>
+                </div>
+                <div class="tab1">
+                	<table border="0" cellpadding="0" cellspacing="0">
+                    	<tr>
+                       		<td width="142" class="lft">中文 姓</td>
+                       		<td width="139"><input name="" type="text" class="txt1" /></td>
+                       		<td width="142" class="lft">中文 名</td>
+                       		<td width="139"><input name="" type="text" class="txt1" /></td> 
+                        </tr>
+                        <tr>
+                        	<td class="lft">拼音/英文 姓</td>
+                        	<td><input name="" type="text" class="txt1" /></td>
+                        	<td class="lft">拼音/英文 名</td>
+                        	<td><input name="" type="text" class="txt1" /></td>
+                        </tr>
+                        <tr>
+                        	<td class="lft">性别</td>
+                        	<td>
+                                 <input type="button" name="sex" id="male" class="sex1" />
+                                 <label for="male">男</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <input type="button" name="sex" id="female" class="sex2" />
+                            	 <label for="female">女</label>
+                            </td>
+                            <td class="lft">出生日期</td>
+                        	<td><input name="" type="text" class="txt1" placeholder="年/月/日" /></td>
+                        </tr>
+                        <tr>
+                        	<td class="lft">国籍</td>
+                        	<td><input name="" type="text" class="txt1" /></td>
+                        	<td class="lft">成人/儿童</td>
+                        	<td>
+                            	<div class="contedit zidx71 checked">
+									<div id="seleIndCate" class="selestyle checked"> 请选择 </div>
+                                 </div> 
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="lft">护照</td>
+                        	<td><input name="" type="text" class="txt1" /></td>
+                        	<td class="lft">护照签发地点</td>
+                        	<td><input name="" type="text" class="txt1" /></td>
+                        </tr>
+                        <tr>
+                        	<td class="lft">护照签发日期</td>
+                        	<td><input name="" type="text" class="txt1" placeholder="年/月/日"  /></td>
+                        	<td class="lft">护照有效期至</td>
+                        	<td><input name="" type="text" class="txt1" placeholder="年/月/日"  /></td>
+                        </tr>
+                        <tr>
+                        	<td class="lft"></td>
+                        	<td colspan="3"><input name="" type="checkbox" value="" class="txt4" />&nbsp;&nbsp;保存为常用联系人</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="linkman">
+                	<div class="left"><a href="#"><img src="{{ STATIC_URL }}images/live/user2.jpg" width="78" height="92" /></a><span>第2位旅客</span></div>
+                    <div class="right"><a href="#"><img src="{{ STATIC_URL }}images/live/arrow2.jpg" width="13" height="7" /></a></div>
+                </div>
+                <div class="tab1">
+                	<table border="0" cellpadding="0" cellspacing="0">
+                    	<tr>
+                       		<td width="142" class="lft">中文 姓</td>
+                       		<td width="139"><input name="" type="text" class="txt1" /></td>
+                       		<td width="142" class="lft">中文 名</td>
+                       		<td width="139"><input name="" type="text" class="txt1" /></td> 
+                        </tr>
+                        <tr>
+                        	<td class="lft">拼音/英文 姓</td>
+                        	<td><input name="" type="text" class="txt1" /></td>
+                        	<td class="lft">拼音/英文 名</td>
+                        	<td><input name="" type="text" class="txt1" /></td>
+                        </tr>
+                        <tr>
+                        	<td class="lft">性别</td>
+                        	<td>
+                                 <input type="button" name="sex" id="male" class="sex1" />
+                                 <label for="male">男</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <input type="button" name="sex" id="female" class="sex2" />
+                            	 <label for="female">女</label>
+                            </td>
+                            <td class="lft">出生日期</td>
+                        	<td><input name="" type="text" class="txt1" placeholder="年/月/日" /></td>
+                        </tr>
+                        <tr>
+                        	<td class="lft">国籍</td>
+                        	<td><input name="" type="text" class="txt1" /></td>
+                        	<td class="lft">成人/儿童</td>
+                        	<td>
+                            	<div class="contedit zidx71 checked">
+									<div id="seleIndCate" class="selestyle checked"> 请选择 </div>
+                                 </div>   
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="lft">护照</td>
+                        	<td><input name="" type="text" class="txt1" /></td>
+                        	<td class="lft">护照签发地点</td>
+                        	<td><input name="" type="text" class="txt1" /></td>
+                        </tr>
+                        <tr>
+                        	<td class="lft">护照签发日期</td>
+                        	<td><input name="" type="text" class="txt1" placeholder="年/月/日"  /></td>
+                        	<td class="lft">护照有效期至</td>
+                        	<td><input name="" type="text" class="txt1" placeholder="年/月/日"  /></td>
+                        </tr>
+                        <tr>
+                        	<td class="lft"></td>
+                        	<td colspan="3"><input name="" type="checkbox" value="" class="txt4" />&nbsp;&nbsp;保存为常用联系人</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="message">
+            	 <div class="agmt"><input name="" type="checkbox" value=""  class="txt5"/>我同意<span>退订政策</span>、<span>《服务商守则》</span>、<span>旅客退款政策</span>和<span>服务条款</span>。</div>
+                <div class="order"><a href="/order/1000/alipay"><input name="" type="button" class="btn" /></a></div>
+                <p>只有当服务商接受了您的申请，您才会被收取费用。服务商有24小时的回复时间。如果服务商拒绝了您的申请或没有回复，您
+将不会被收取任何费用。</p>
+            </div>
+            <div class="flow">本次交易流程如下图所示</div>
+        </div>
+        <div class="wonwrapR">
+        	<div class="ad"><a href="#"><img src="{{ STATIC_URL }}images/live/pic_4.jpg" width="314" height="208" /></a></div>
+        	<div class="tab2">
+            	<h2>马尔代夫休闲5日</h2>
+                <div class="title">2人成行2014年7月16日出发</div>
+                <table cellpadding="0" cellspacing="0" border="0">
+                	<tr>
+                    	<td width="138px">退订政策</td>
+                        <td width="138px"><span>严格</span></td>
+                    </tr>
+                    <tr>
+                    	<td>天</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                    	<td>晚</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+                <table cellpadding="0" cellspacing="0" border="0">
+                	<tr>
+                    	<td width="138px">小计</td>
+                        <td width="138px">1599</td>
+                    </tr>
+                    <tr>
+                    	<td>保险费</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                    	<td>优惠券代码</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+                <table cellpadding="0" cellspacing="0" border="0" style="border-bottom:0;">
+                	<tr>
+                    	<td width="138px" style="font-size:18px;">总计</td>
+                        <td width="138px"><strong>¥1699</strong></td>
+                    </tr>
+                </table>
+            </div>
+		</div>
+    </div>
+</div>
+<!--  footer -->
+<footer>
+	<div class="container">
+        <div class="row">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><span>合作媒体：</span></li>
+            <li><a href="#"><img src="{{ STATIC_URL }}images/live/logo_cnt.png" alt=""></a></li>
+            <li><a href="#"><img src="{{ STATIC_URL }}images/live/logo_tc.png" alt=""></a></li>
+            <li><a href="#"><img src="{{ STATIC_URL }}images/live/logo_bloomberg_business.png" alt=""></a></li>
+            <li><a href="#"><img src="{{ STATIC_URL }}images/live/logo_tl.png" alt=""></a></li>
+        </ul>
+        <a href="#" class="pull-right"><img src="{{ STATIC_URL }}images/live/logo_webede.png" alt="webelievedesign"></a>
+        <div class="clearfix"></div>
+        </div>
+    </div>
+</footer>
+    {% block content %}
+    {% endblock %}
+    <script src="{{ STATIC_URL }}js/jquery-1.10.2.min.js"></script> 
+    <!-- Include all compiled plugins (below), or include individual files as needed --> 
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script> 
+    <div style="display:none;">
+      <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5828818'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/stat.php%3Fid%3D5828818%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+    </div>
+  </body>
+</html>

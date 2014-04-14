@@ -37,3 +37,7 @@ def login(request):
         else:
             return {'message':u'用户名或密码不正确'}
     return {'path':path,'message':message}
+
+@render_to('common/about/safe.html')
+def about_safe(request):
+    return {}

@@ -39,7 +39,7 @@ def index(request):
         orders=paginator.page(paginator.num_pages)
     return {'page_count':page_count,'orders':orders}
 
-@render_to('ink/product/create.html')
+@render_to('order/create.html')
 def create(request):
     if request.method=='POST':
         pid = request.REQUEST.get('product','')

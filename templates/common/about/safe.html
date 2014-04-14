@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load url from future %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css"/>
+<!--  header -->
+<div id="header">
+	<div class="logo"><a href="/"><img src="{{ STATIC_URL }}images/live/logo.jpg" width="145" height="48" /></a></div>
+    <div class="search"><input name="" type="text" class="txt" /></div>
+    <div class="nav">
+    	<ul>
+        	<li><a href="#">旅行灵感</a></li>
+            <li><a href="#">注册</a></li>
+            <li><a href="#">登录</a></li>
+            <li><a href="#"><input name="" type="button" class="btn" /></a></li>
+        </ul>
+    </div>
+</div>
+<!--  banner -->
+<div class="banner"><a href="#"></a></div>
+<!--  wrap -->
+<div class="wrap">
+	<div class="con">
+    	<div class="user"><a href="#" class="u1"></a></div>
+    	<h2>让您轻松认识我们的服务商</h2>
+    </div>
+	<!--  content -->
+    <div class="content">
+        <div class="conL"><a href="#"><img src="{{ STATIC_URL }}images/live/pic_1.jpg" width="484" height="300" /></a></div>
+        <div class="conR">
+        	<div class="row-fluid" style="height:100px;">
+            	<div class="span2 offset">
+                	<i class="icon-sun icon-1x"></i>
+                </div> 
+                <div class="span6">
+                	<h3>已验证身份</h3>
+                    <p>服务商通过关联他们的社交网络和扫描正式身份证明，或者确认个人信息进行身份验证。<a href="#">验证您的身份</a></p>
+                </div>
+            </div>
+            <div class="row-fluid" style="height:100px;">
+            	<div class="span2 offset">
+                	<i class="icon-sun icon-2x"></i>
+                </div> 
+                <div class="span6">
+                	<h3>个人资料与评价</h3>
+                    <p>通过详细的个人资料和得到确认的评价，了解您的服务商。<a href="#">了解更多</a></p>
+                </div>
+            </div>
+            <div class="row-fluid" style="height:100px;">
+            	<div class="span2 offset">
+                	<i class="icon-sun icon-3x"></i>
+                </div> 
+                <div class="span6">
+                	<h3>发送消息</h3>
+                    <p>使用我们的消息系统了解更多关于服务商的情况，或向游客询问有关其旅程的事宜。<a href="#">了解更多</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  wrap -->
+<div class="wrap" style="background:#dcdad0; border-bottom:0;">
+	<div class="con">
+    	<div class="user"><a href="#" class="u2"></a></div>
+    	<h2>我们来处理款项，您不必操心</h2>
+    </div>
+    <!--  content -->
+    <div class="content">
+        <div class="conL"><a href="#"><img src="{{ STATIC_URL }}images/live/pic_2.jpg" width="484" height="300" /></a></div>
+        <div class="conR">
+        	<div class="row-fluid">
+            	<div class="span2 offset">
+                	<i class="icon-sun icon-4x"></i>
+                </div> 
+                <div class="span6">
+                	<h3>一个安全的平台</h3>
+                    <p>预订旅程时，游客通过我们的Cheeers支付金额，服务商将会在房客入住24小时后通过Cheeers收到付款。所有交易都会得到妥善处理，因此您所要做的，只是说声“你好”。<a href="#">了解更多</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  wrap -->
+<div class="wrap" style="border-bottom:0;">
+	<div class="con">
+        <div class="user"><a href="#" class="u3"></a></div>
+        <h2>有限选择有保障金的服务商</h2>
+    </div>
+    <!--  content -->
+    <div class="content">
+        <div class="conL"><a href="#"><img src="{{ STATIC_URL }}images/live/pic_3.jpg" width="484" height="300" /></a></div>
+        <div class="conR">
+        	<div class="row-fluid">
+            	<div class="span2 offset">
+                	<i class="icon-sun icon-5x"></i>
+                </div> 
+                <div class="span6">
+                	<h3>让你的交易更放心</h3>
+                    <p>如果卖家在旅行消费过程中，未履行承诺，买家可以根据相关规则规定，向火花平台发起赔付或者维权申请，火花平台会按照规则用保证金对买家先行赔付。<a href="#">了解更多</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  footer -->
+<footer>
+	<div class="container">
+        <div class="row">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><span>合作媒体：</span></li>
+            <li><a href="#"><img src="{{ STATIC_URL }}images/live/logo_cnt.png" alt=""></a></li>
+            <li><a href="#"><img src="{{ STATIC_URL }}images/live/logo_tc.png" alt=""></a></li>
+            <li><a href="#"><img src="{{ STATIC_URL }}images/live/logo_bloomberg_business.png" alt=""></a></li>
+            <li><a href="#"><img src="{{ STATIC_URL }}images/live/logo_tl.png" alt=""></a></li>
+        </ul>
+        <a href="#" class="pull-right"><img src="{{ STATIC_URL }}images/live/logo_webede.png" alt="webelievedesign"></a>
+        <div class="clearfix"></div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
