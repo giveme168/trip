@@ -28,17 +28,50 @@
 	padding:0;
 	width:40px;
 	height:40px;
-	background:url(/static/images/desktop/search_bar_button_homepage.png) no-repeat;
+	background:url(/static/images/live/search_bar_button_homepage.png) no-repeat;
 }
 #chrs-homepage-playways {
+	border-bottom:1px solid #d3d2cf;
+	padding-top:22px;
 	position:relative;
-	box-shadow:#a4a4a4 0 6px 10px;
+/*	box-shadow:#a4a4a4 0 6px 10px;*/
+	background-color:#f8f8f7;
 	z-index:999;
 }
+#chrs-homepage-playways .thumbnail {
+	background-color:transparent;
+}
+#chrs-homepage-hotspots {
+	border-bottom:1px solid #d3d2cf;
+	background-color:#ebeae6;
+}
+#chrs-homepage-hotspots .thumbnail {
+	position:relative;
+	border:none;
+	padding:0;
+	background:none;
+}
+#chrs-homepage-hotspots .thumbnail .caption {
+	position:absolute;
+	margin-top:-20px;
+	top:50%;
+	width:100%;
+	text-align:center;
+}
+#chrs-homepage-hotspots .thumbnail .caption h3 {
+	margin:0;
+	height:40px;
+	font-size:28px;
+	color:#fff;
+	line-height:40px;
+}
+/*#chrs-homepage-hotspots ul {
+	margin-right:10%;
+}*/
 #chrs-homepage-members {
 	position:relative;
 	padding:38px 0;
-	background:#ebeae6;
+	background:#dcdad0;
 	z-index:99;
 }
 #chrs-homepage-members #chrs-homepage-thumbnails .thumbnail {
@@ -91,7 +124,7 @@
 		margin-right:-80px;
 		width:340px;
 		height:170px;
-		background:url(/static/images/desktop/logo_homepage_without_shadow.png) no-repeat;
+		background:url(/static/images/live/logo_homepage_without_shadow.png) no-repeat;
 		z-index:299;
 	}
 	#logo span {
@@ -138,6 +171,16 @@
 		font-size:12px;
 		line-height:18px;
 	}
+	#homepage .carousel-indicators {
+		left: 40px;
+		bottom:0；
+	}
+	#homepage .carousel-caption {
+		right: 0;
+		bottom: 0;
+		padding-right:40px;
+		text-align:right;
+	}
 	/* Footer */
 	#homepage footer ul.list-unstyled li a {
 		margin-right:34px;
@@ -147,7 +190,55 @@
 
 }
 @media (max-width:768px) {
-	#chrs-homepage-main-carousel .item img {
-		height:100% !important;
+	#logo {
+		position:relative;
+		margin:0 auto;
+		margin-top:-68px;
+		width:150%;
+		background:none;
+		z-index:299;
+	}
+	#logo span {
+		display:none;
+	}
+	#chrs-homepage-main-search {
+		position:absolute;
+		top:80px;
+		left:0;
+		margin: 12px 55px;
+		border-radius:10px;
+		padding: 18px;
+		/* Fallback for web browsers that doesn't support RGBa */
+		background: rgb(0, 0, 0);
+		/* RGBa with 0.6 opacity */
+		background: rgba(0, 0, 0, 0.6);
+		/* For IE 5.5 - 7*/
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+		/* For IE 8*/
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+		z-index:99;
+	}
+	#chrs-homepage-main-search #chrs-homepage-search-box #btn-chrs-main-search {
+		position:absolute;
+		left:50%;
+		margin-left:-20px;
+		border:none;
+		border-radius:20px;
+		padding:0;
+		width:40px;
+		height:40px;
+		background:url(/assets/images/desktop/search_bar_button_homepage.png) no-repeat;
+	}
+	#chrs-homepage-main-carousel .item {
+		min-height:320px;
+		overflow:hidden;
+	}
+	#chrs-homepage-main-carousel .item > img {
+		position:absolute;
+		top:0;
+		left:0;
+		width:auto !important;
+		min-width:100%;
+		min-height:320px;
 	}
 }

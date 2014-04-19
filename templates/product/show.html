@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% load url from future %}
+<!--
 <!DOCTYPE html>
 <html>
   <head>
@@ -76,10 +79,596 @@ function getMousePoint(ev,type) {
 }
 </script>
     <script src="{{ STATIC_URL }}js/jquery-1.10.2.min.js"></script> 
-    <!-- Include all compiled plugins (below), or include individual files as needed --> 
+
     <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script> 
     <div style="display:none;">
       <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5828818'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/stat.php%3Fid%3D5828818%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
     </div>
   </body>
-</html>
+</html>-->
+
+
+{% block content %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/master.css" type="text/css" media="screen" charset="utf-8">
+<div class="header-shadow"></div>
+    <div class="qe-main">
+        <div class="qe-container">
+            <div class="trow main-title">
+                <div class="tspan8">
+                    <h1>马尔代夫休闲5日</h1>
+                </div>
+                <div class="tspan4">
+                    <div class="add-plan-outer pull-left">
+                        <a class="pro-info-icon add-plan pull-left png_bg" href="#"></a>
+                        <div class="pull-left add-plan-text">添加到我的<br/><span style="font-size:15px;font-weight:bold;">旅行计划</span></div>
+                    </div>
+                    
+                    <div class="divider-line pull-left"></div>
+                    <div class="sns pull-right">
+                        分享到
+                        <a href="#" class="pro-info-icon sns-weixin png_bg"></a>
+                        <a href="#" class="pro-info-icon sns-weibo png_bg"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="trow main-content">
+                <div class="tspan8">
+                    <div class="piclist clearfix">
+                        <ul id="bigpics">
+                            <li><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
+                            <li style="display:none"><a href=""><img src="//static/images/live/live/big_thums.jpg"></a></li>
+                            <li style="display:none"><a href=""><img src="//static/images/live/live//big_thums.jpg"></a></li>
+                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
+                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
+                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
+                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
+                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
+                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
+                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
+                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
+                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
+                        </ul>
+                        <div class="cls"></div>
+                        <div class="smallpics">
+                            <ul class="pictab clearfix">
+                                <li class="prev"><a href="javascript:void(0);" class="pro-info-bth btn-prev"></a></li>
+                                <li class="next"><a href="javascript:void(0);" class="pro-info-bth btn-next"></a></li>
+                            </ul>
+                            <ul id="cnpictab" class="pictab clearfix" style="margin-left: 34px;margin-top: -67px;">
+                                <li id="cnpictab0" class="active" data-num="0"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
+                                <li id="cnpictab1" data-num="1"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
+                                <li id="cnpictab2" data-num="2"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
+                                <li id="cnpictab3" data-num="3"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
+                                <li id="cnpictab4" data-num="4"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
+                                <li id="cnpictab5" data-num="5"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
+                                <li id="cnpictab6" data-num="6"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
+                                <li id="cnpictab7" data-num="7"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
+                                <li id="cnpictab8" data-num="8"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
+                                <li id="cnpictab9" data-num="9"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
+                                <li id="cnpictab10" data-num="10"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
+                                <li id="cnpictab11" data-num="11"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="line-infos">
+                        <div class="line-tabbable clearfix">
+                            <ul class="line-nav line-nav-tabs clearfix">
+                                <li class="first active"><a href="javascript:void(0);" data-toggle="0">详情</a></li>
+                                <li><a href="javascript:void(0);" data-toggle="1">地图</a></li>
+                                <li><a href="javascript:void(0);" data-toggle="2">72个评论</a></li>
+                                <li><a href="javascript:void(0);" data-toggle="3">也在其他15个旅行计划中</a></li>
+                            </ul>
+                            <ul class="line-left-nav line-left-nav-tabs clearfix">
+                                <li class="active first"><a href="javascript:void(0);" class="pro-info-icon line-details png_bg" data-toggle="0"></a></li>
+                                <li class=""><a href="javascript:void(0);" data-toggle="1">D1</a></li>
+                                <li><a href="javascript:void(0);" data-toggle="2">D2</a></li>
+                                <li><a href="javascript:void(0);" data-toggle="3">D3</a></li>
+                                <li><a href="javascript:void(0);" data-toggle="4">D4</a></li>
+                                <li><a href="javascript:void(0);" data-toggle="5">D5</a></li>
+                            </ul>
+                            <div class="line-tab-content">
+                                <div class="tab-pane active" id="tab0">
+                                    <div class="trow pd30 ie7-no-padd">
+                                        <div class="tspan6">
+                                            <h3>行程安排</h3>
+                                            <div class="details_d" id="desc_d1">
+                                                <img src="/static/images/live/desc_d1.jpg">
+                                                <div class="line-text">第一天：洛杉矶(Los Angeles)</div>
+                                            </div>
+                                            <div class="details_d" id="desc_d2">
+                                                <img src="/static/images/live/desc_d2.jpg">
+                                                <div class="line-text">第二天：迪斯尼乐园(Disneyland)</div>
+                                            </div>
+                                            <div class="details_d" id="desc_d3">
+                                                <div class="line-text">第三天：拉斯维加斯(Las Vegas)</div>
+                                            </div>
+                                            <div class="details_d" id="desc_d4">
+                                                <div class="line-text">第四天：胡佛水坝(Hoover Dam)</div>
+                                            </div>
+                                            <div class="details_d" id="desc_d5">
+                                                <img src="/static/images/live/desc_d5.jpg">
+                                                <div class="line-text">第五天：硅谷(Silicon Valley)</div>
+                                            </div>
+                                        </div>
+                                        <div class="tspan5">
+                                            <ul class="line-arrange">
+                                                <li>
+                                                    <i class="pro-info-icon icon-alarm-clock png_bg"></i>
+                                                    <label>历时</label>5天
+                                                </li>
+                                                <li><i class="pro-info-icon icon-open-day png_bg"></i><label>开放日</label>周一至周五</li>
+                                                <li><i class="pro-info-icon icon-user-group png_bg"></i><label>最少人数</label>1人</li>
+                                                <li><i class="pro-info-icon icon-user-group png_bg"></i><label>最多人数</label>12人</li>
+                                                <li><i class="pro-info-icon icon-open-day png_bg"></i><label>预定</label>至少提前2周</li>
+                                                <li><i class="pro-info-icon icon-open-day png_bg"></i><label>取消</label>至少提前4周</li>
+                                            </ul>
+                                            <div class="line-feature">
+                                                <span>行程特色</span>洛杉矶、旧金山、拉斯维加斯三大国际性都市，胡佛水坝、大峡谷两大世界奇景，风情小镇圣塔芭芭拉和丹麦村，海滨圣地亚哥，世界名校斯坦福大学，还有加州风景最美的优胜美地国家公园，购物狂的天堂名牌工厂直销中心，吃货的福音巧克力工厂，还有圣地亚哥、棕榈泉任你选，这趟旅行真是物超所值！
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="left_tab1">
+                                    <div id="day1" class="line-day pd30">
+                                        <div class="day-title mb20">
+                                            <span class="trip-mode">洛杉矶(Los Angeles)<i class="pro-info-icon trip-mode-car png_bg"></i></span>
+                                            <span class="trip-mode">拉斯维加斯(Las Vegas)</span><br/>
+                                            <span class="trip-mode"><i class="pro-info-icon trip-mode-car png_bg"></i>圣佐治(St. George)</span>
+                                        </div>
+                                        <div class="trip-content">
+                                            <div class="clearfix over-hidden">
+                                                <img class="pull-left" src="/static/images/live/desc_d1.jpg">
+                                                <img class="pull-right" src="/static/images/live/desc_d2.jpg">
+                                            </div>
+                                            <p class="line-desc">
+                                                大巴沿15号高速往北行，进入北美最大的沙漠——【莫哈维沙漠】。午餐过后，我们抵达拉斯维加斯，您可以在这里的赌场试试手气或者在市内观光。黄昏时分，我们将抵达圣乔治，并在那里留宿一晚。
+                                            </p>
+                                            <div class="clearfix">
+                                                <img class="pull-left" src="/static/images/live/desc_d5.jpg">
+                                                <img class="pull-right" src="/static/images/live/day1.jpg">
+                                            </div>
+                                            <p class="line-desc">
+                                                用餐安排：早餐：不含  午餐：不含  晚餐：不含酒店住宿：Quality Inn St. George 或同等级酒店
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="left_tab2">
+                                    <div id="day2" class="line-day pd30">
+                                        <div class="day-title mb20">
+                                            <span class="trip-mode">洛杉矶(Los Angeles)<i class="pro-info-icon trip-mode-car png_bg"></i></span>
+                                            <span class="trip-mode">拉斯维加斯(Las Vegas)</span><br/>
+                                            <span class="trip-mode"><i class="pro-info-icon trip-mode-car png_bg"></i>圣佐治(St. George)</span>
+                                        </div>
+                                        <div class="trip-content">
+                                            <div class="clearfix over-hidden">
+                                                <img class="pull-left" src="/static/images/live/desc_d1.jpg">
+                                                <img class="pull-right" src="/static/images/live/desc_d2.jpg">
+                                            </div>
+                                            <p class="line-desc">
+                                                大巴沿15号高速往北行，进入北美最大的沙漠——【莫哈维沙漠】。午餐过后，我们抵达拉斯维加斯，您可以在这里的赌场试试手气或者在市内观光。黄昏时分，我们将抵达圣乔治，并在那里留宿一晚。
+                                            </p>
+                                            <div class="clearfix">
+                                                <img class="pull-left" src="/static/images/live/desc_d5.jpg">
+                                                <img class="pull-right" src="/static/images/live/day1.jpg">
+                                            </div>
+                                            <p class="line-desc">
+                                                用餐安排：早餐：不含  午餐：不含  晚餐：不含酒店住宿：Quality Inn St. George 或同等级酒店
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="left_tab3">
+                                    <div id="day3" class="line-day pd30">
+                                        <div class="day-title mb20">
+                                            <span class="trip-mode">洛杉矶(Los Angeles)<i class="pro-info-icon trip-mode-car png_bg"></i></span>
+                                            <span class="trip-mode">拉斯维加斯(Las Vegas)</span><br/>
+                                            <span class="trip-mode"><i class="pro-info-icon trip-mode-car png_bg"></i>圣佐治(St. George)</span>
+                                        </div>
+                                        <div class="trip-content">
+                                            <div class="clearfix over-hidden">
+                                                <img class="pull-left" src="/static/images/live/desc_d1.jpg">
+                                                <img class="pull-right" src="/static/images/live/desc_d2.jpg">
+                                            </div>
+                                            <p class="line-desc">
+                                                大巴沿15号高速往北行，进入北美最大的沙漠——【莫哈维沙漠】。午餐过后，我们抵达拉斯维加斯，您可以在这里的赌场试试手气或者在市内观光。黄昏时分，我们将抵达圣乔治，并在那里留宿一晚。
+                                            </p>
+                                            <div class="clearfix">
+                                                <img class="pull-left" src="/static/images/live/desc_d5.jpg">
+                                                <img class="pull-right" src="/static/images/live/day1.jpg">
+                                            </div>
+                                            <p class="line-desc">
+                                                用餐安排：早餐：不含  午餐：不含  晚餐：不含酒店住宿：Quality Inn St. George 或同等级酒店
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="left_tab4">
+                                    <div id="day4" class="line-day pd30">
+                                        <div class="day-title mb20">
+                                            <span class="trip-mode">洛杉矶(Los Angeles)<i class="pro-info-icon trip-mode-car png_bg"></i></span>
+                                            <span class="trip-mode">拉斯维加斯(Las Vegas)</span><br/>
+                                            <span class="trip-mode"><i class="pro-info-icon trip-mode-car png_bg"></i>圣佐治(St. George)</span>
+                                        </div>
+                                        <div class="trip-content">
+                                            <div class="clearfix over-hidden">
+                                                <img class="pull-left" src="/static/images/live/desc_d1.jpg">
+                                                <img class="pull-right" src="/static/images/live/desc_d2.jpg">
+                                            </div>
+                                            <p class="line-desc">
+                                                大巴沿15号高速往北行，进入北美最大的沙漠——【莫哈维沙漠】。午餐过后，我们抵达拉斯维加斯，您可以在这里的赌场试试手气或者在市内观光。黄昏时分，我们将抵达圣乔治，并在那里留宿一晚。
+                                            </p>
+                                            <div class="clearfix">
+                                                <img class="pull-left" src="/static/images/live/desc_d5.jpg">
+                                                <img class="pull-right" src="/static/images/live/day1.jpg">
+                                            </div>
+                                            <p class="line-desc">
+                                                用餐安排：早餐：不含  午餐：不含  晚餐：不含酒店住宿：Quality Inn St. George 或同等级酒店
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="left_tab5">
+                                    <div id="day5" class="line-day pd30">
+                                        <div class="day-title mb20">
+                                            <span class="trip-mode">洛杉矶(Los Angeles)<i class="pro-info-icon trip-mode-car png_bg"></i></span>
+                                            <span class="trip-mode">拉斯维加斯(Las Vegas)</span><br/>
+                                            <span class="trip-mode"><i class="pro-info-icon trip-mode-car png_bg"></i>圣佐治(St. George)</span>
+                                        </div>
+                                        <div class="trip-content">
+                                            <div class="clearfix over-hidden">
+                                                <img class="pull-left" src="/static/images/live/desc_d1.jpg">
+                                                <img class="pull-right" src="/static/images/live/desc_d2.jpg">
+                                            </div>
+                                            <p class="line-desc">
+                                                大巴沿15号高速往北行，进入北美最大的沙漠——【莫哈维沙漠】。午餐过后，我们抵达拉斯维加斯，您可以在这里的赌场试试手气或者在市内观光。黄昏时分，我们将抵达圣乔治，并在那里留宿一晚。
+                                            </p>
+                                            <div class="clearfix">
+                                                <img class="pull-left" src="/static/images/live/desc_d5.jpg">
+                                                <img class="pull-right" src="/static/images/live/day1.jpg">
+                                            </div>
+                                            <p class="line-desc">
+                                                用餐安排：早餐：不含  午餐：不含  晚餐：不含酒店住宿：Quality Inn St. George 或同等级酒店
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="top_tab1">
+                                    <div class="line-map ie7-padd">
+                                        <img src="/static/images/live/map.jpg" width="560" height="560">
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="top_tab2">
+                                    <div id="reviewlistbox" class="line-review pd30">
+                                        <div class="one-review first">
+                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
+                                            <div class="review-right">
+                                                <div class="rate-user-info">
+                                                    <i class="pro-info-icon star star4 png_bg"></i>
+                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
+                                                </div>
+                                                <div class="comment-content">
+                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="one-review">
+                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
+                                            <div class="review-right">
+                                                <div class="rate-user-info">
+                                                    <i class="pro-info-icon star star3 png_bg"></i>
+                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
+                                                </div>
+                                                <div class="comment-content">
+                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="one-review">
+                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
+                                            <div class="review-right">
+                                                <div class="rate-user-info">
+                                                    <i class="pro-info-icon star star2 png_bg"></i>
+                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
+                                                </div>
+                                                <div class="comment-content">
+                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="one-review">
+                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
+                                            <div class="review-right">
+                                                <div class="rate-user-info">
+                                                    <i class="pro-info-icon star star1 png_bg"></i>
+                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
+                                                </div>
+                                                <div class="comment-content">
+                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="one-review">
+                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
+                                            <div class="review-right">
+                                                <div class="rate-user-info">
+                                                    <i class="pro-info-icon star star5 png_bg"></i>
+                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
+                                                </div>
+                                                <div class="comment-content">
+                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="one-review">
+                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
+                                            <div class="review-right">
+                                                <div class="rate-user-info">
+                                                    <i class="pro-info-icon star star3 png_bg"></i>
+                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
+                                                </div>
+                                                <div class="comment-content">
+                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="one-review">
+                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
+                                            <div class="review-right">
+                                                <div class="rate-user-info">
+                                                    <i class="pro-info-icon star star2 png_bg"></i>
+                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
+                                                </div>
+                                                <div class="comment-content">
+                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="one-review">
+                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
+                                            <div class="review-right">
+                                                <div class="rate-user-info">
+                                                    <i class="pro-info-icon star star1 png_bg"></i>
+                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
+                                                </div>
+                                                <div class="comment-content">
+                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="one-review">
+                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
+                                            <div class="review-right">
+                                                <div class="rate-user-info">
+                                                    <i class="pro-info-icon star star5 png_bg"></i>
+                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
+                                                </div>
+                                                <div class="comment-content">
+                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="one-review last">
+                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
+                                            <div class="review-right">
+                                                <div class="rate-user-info">
+                                                    <i class="pro-info-icon star star2 png_bg"></i>
+                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
+                                                </div>
+                                                <div class="comment-content">
+                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tspan4">
+                    <div class="white-panel qe-panel">
+                        <div class="clearfix">
+                            <span class="trip-price pull-left">¥15990</span>
+                            <div class="pull-right">价格最<br/>优保证</div>
+                            <a href="#" class="pro-info-icon btn-ensure mr5 png_bg pull-right"></a>
+                        </div>
+                        <div class="mb20">每人</div>
+                        <a href="/order/create?pid=1000" class="pro-info-bth btn-book pull-left"></a>
+                        <a href="#" class="pro-info-bth btn-buy pull-right"></a>
+                        <div class="cls"></div>
+                    </div>
+                    <div class="light-panel qe-panel suppliers mt15">
+                        <a href="#" class="supplier-frame">
+                            <img src="/static/images/live/supplier.jpg" width="230" height="230" alt="供应商图像">
+                        </a>
+                        <h4>Compass Travel Club</h4>
+                        <h5>供应商的更多产品<i class="left-icon"></i></h5>
+                        <p><label>好评率</label>97%</p>
+                        <p><label>回复时间</label>12个小时</p>
+                        <p><label>使用语言</label>汉语、英语</p>
+                        <a href="#" class="pro-info-bth btn-contact mt30"></a>
+                    </div>
+                    <div class="dark-panel qe-panel mt15 safe">
+                        <h5>Cheeers是如何保障你的出行的？</h5>
+                        <a href="#" class="pro-info-icon btn-safe  png_bg pull-left"></a>
+                        <div class="pull-left ml20">了解安全保障信息<br/>Cheeers安全认证<br/>真实可靠的用户信息和评价</div>
+                        <div class="cls"></div>
+                    </div>
+                    <div class="light-panel qe-panel recommend mt15">
+                        <h3>你也可以这样玩</h3>
+                        <ul class="recommend-list">
+                            <li class="clearfix">
+                                <img src="/static/images/live/recommend.jpg" width="120" height="80">
+                                <div class="recommend-info">
+                                    <h6>热气球游柬埔寨</h6>
+                                    <p>位于阿得莱德市中心的“文化大道”——北大街，整条街绿树成荫，是阿得莱德重要文化宝藏聚集地</p>
+                                </div>
+                            </li>
+                            <li class="clearfix">
+                                <img src="/static/images/live/recommend.jpg" width="120" height="80">
+                                <div class="recommend-info">
+                                    <h6>热气球游柬埔寨</h6>
+                                    <p>位于阿得莱德市中心的“文化大道”——北大街，整条街绿树成荫，是阿得莱德重要文化宝藏聚集地</p>
+                                </div>
+                            </li>
+                            <li class="last clearfix">
+                                <img src="/static/images/live/recommend.jpg" width="120" height="80">
+                                <div class="recommend-info">
+                                    <h6>热气球游柬埔寨</h6>
+                                    <p>位于阿得莱德市中心的“文化大道”——北大街，整条街绿树成荫，是阿得莱德重要文化宝藏聚集地</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="cls"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="qe-footer clearfix">
+        <div class="qe-container">
+            <ul class="column mr20 first">
+                <li>
+                    <img class="pull-left" src="/static/images/live/flag.png" alt="cheeers in English">
+                    <h2 class="pull-left">Cheeers in English</h2>
+                </li>
+            </ul>
+            <ul class="column mr20">
+                <li><h3>发现</h3></li>
+                <li><a href="/safe/">信任与安全</a></li>
+                <li><a href="#">邀请好友</a></li>
+                <li><a href="#">Cheeers灵感</a></li>
+                <li><a href="#">Cheeers骑士</a></li>
+                <li><a href="#">移动版</a></li>
+                <li><a href="#">为什么要旅行</a></li>
+                <li><a href="#">做个文明的旅行家</a></li>
+                <li><a href="#">网站地图</a></li>
+            </ul>
+            <ul class="column mr20">
+                <li><h3>公司信息</h3></li>
+                <li><a href="#">关于</a></li>
+                <li><a href="#">招贤纳士</a></li>
+                <li><a href="#">新闻</a></li>
+                <li><a href="#">博客</a></li>
+                <li><a href="#">帮助</a></li>
+                <li><a href="#">政策</a></li>
+                <li><a href="#">供应商义务</a></li>
+                <li><a href="#">条款与隐私</a></li>
+            </ul>
+            <ul class="column">
+                <li><h3>关注</h3></li>
+                <li><a href="#">微信</a></li>
+                <li><a href="#">新浪微博</a></li>
+                <li><a href="#">Flickr</a></li>
+                <li><a href="#">Google+</a></li>
+                <li class="footer-insprite"><a href="#"><img src="/static/images/live/ads.png" class="png_bg" alt="预订你的旅游灵感"></a></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(function() {
+        var bigpics=$('#bigpics');
+        var cnpictab=$('#cnpictab');
+        var prev=$('.prev');
+        var next=$('.next');
+        count=$('#bigpics li').length;
+        n=0;
+        $('#cnpictab li').click(function(){
+            var a = $(this).attr("data-num");
+            n=a;
+            if(a>=count){return;}
+            $("#bigpics li").filter(":visible").fadeOut(500).parent().children().eq(a).fadeIn(1000);
+            $(this).addClass("active");
+            $(this).siblings().removeClass("active");
+        });
+        t = setInterval("showAuto()", 7000);
+        $(".piclist").hover(function() {
+            clearInterval(t);
+        },
+        function() {
+            t = setInterval("showAuto()", 5000);
+        });
+        prev.click(function(){
+            n--;
+            $("#cnpictab li").first().appendTo($("#cnpictab"));
+            if (n >= 0) {
+                $("#bigpics li").filter(":visible").fadeOut(500).parent().children().eq(n).fadeIn(1000);
+                $('#cnpictab'+n).addClass('active');
+                $('#cnpictab'+n).siblings().removeClass("active");
+               /* $("#cnpictab li").eq(n).addClass("active");
+                $("#cnpictab li").eq(n).siblings().removeClass("active");*/
+                
+            } else {
+                n = count-1;
+                $("#bigpics li").filter(":visible").fadeOut(500).parent().children().eq(n).fadeIn(1000);
+                $('#cnpictab'+n).addClass('active');
+                $('#cnpictab'+n).siblings().removeClass("active");
+                /*$("#cnpictab li").eq(n).addClass("active");
+                $("#cnpictab li").eq(n).siblings().removeClass("active");*/
+            }
+        })
+        next.click(function(){
+            n++;
+            $("#cnpictab li").last().prependTo($("#cnpictab"));
+            if(n!=count){
+                $("#bigpics li").filter(":visible").fadeOut(500).parent().children().eq(n).fadeIn(1000);
+                $('#cnpictab'+n).addClass('active');
+                $('#cnpictab'+n).siblings().removeClass("active");
+            }else{
+                n=0;
+                $("#bigpics li").filter(":visible").fadeOut(500).parent().children().eq(n).fadeIn(1000);
+                $('#cnpictab'+n).addClass('active');
+                $('#cnpictab'+n).siblings().removeClass("active");
+            }
+        })
+    });
+    function showAuto() {
+        n = n >= (count - 1) ? 0: ++n;
+        $("#cnpictab li").eq(n).trigger("click");
+    }
+    $('.line-nav a').click(function(){
+        var data=$(this).attr('data-toggle');
+        if(data==0){
+            $(this).parent().siblings('li').removeClass("active");
+            $(this).parent('li').addClass("active");
+            $('.line-left-nav li').removeClass('active')
+            $('.line-left-nav .first').addClass('active');
+            $('.tab-pane').removeClass('active');
+            $('#tab0').addClass('active')
+        }else{
+            $('.line-left-nav .first').removeClass('active');
+            $('.line-left-nav li').removeClass('active');
+            $(this).parent().siblings('li').removeClass("active");
+            $(this).parent('li').addClass("active");
+            $('.tab-pane').removeClass('active');
+            $('#top_tab'+data).addClass('active')
+        }
+    })
+    $('.line-left-nav a').click(function(){
+        var data=$(this).attr('data-toggle');
+        if(data==0){
+            $(this).parent().siblings('li').removeClass("active");
+            $(this).parent('li').addClass("active");
+            $('.line-nav li').removeClass('active');
+            $('.line-nav .first').addClass('active');
+            $('.tab-pane').removeClass('active');
+            $('#tab0').addClass('active')
+        }else{
+            $('.line-nav .first').removeClass('active');
+            $('.line-nav li').removeClass('active');
+            $(this).parent().siblings('li').removeClass("active");
+            $(this).parent('li').addClass("active");
+            $('.tab-pane').removeClass('active');
+            $('#left_tab'+data).addClass('active')
+        }
+    })
+
+    </script>
+<!--[if IE 6]>
+    <script src="/static/js/DD_belatedPNG_0.0.8a-min.js" language="javascript" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.onload= function(){DD_belatedPNG.fix('.png_bg');}
+    </script>
+<![endif]-->
+{% endblock %}
