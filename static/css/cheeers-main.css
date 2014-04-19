@@ -48,7 +48,7 @@
 #chrs-homepage-hotspots .thumbnail {
 	position:relative;
 	border:none;
-	padding:0;
+/*	padding:0;*/
 	background:none;
 }
 #chrs-homepage-hotspots .thumbnail .caption {
@@ -84,7 +84,115 @@
 	color:#949494;
 	background:#666;
 }
-
+@media (max-width:768px) {
+	#logo {
+		position:relative;
+		margin:0 auto;
+		margin-top:-68px;
+		width:120%;
+		background:none;
+		z-index:299;
+	}
+	#logo span {
+		display:none;
+	}
+	#chrs-homepage-main-search {
+		position:absolute;
+		top:80px;
+		left:0;
+		margin: 12px 55px;
+		border-radius:10px;
+		padding: 18px;
+		/* Fallback for web browsers that doesn't support RGBa */
+		background: rgb(0, 0, 0);
+		/* RGBa with 0.6 opacity */
+		background: rgba(0, 0, 0, 0.6);
+		/* For IE 5.5 - 7*/
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+		/* For IE 8*/
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+		z-index:99;
+	}
+	#chrs-homepage-main-search #chrs-homepage-search-box #btn-chrs-main-search {
+		position:absolute;
+		left:50%;
+		margin-left:-20px;
+		border:none;
+		border-radius:20px;
+		padding:0;
+		width:40px;
+		height:40px;
+		background:url(/static/images/live/search_bar_button_homepage.png) no-repeat;
+	}
+	#chrs-homepage-main-carousel .item {
+		min-height:400px;
+/*		overflow:hidden;*/
+	}
+	#chrs-homepage-main-carousel .item > img {
+		position:absolute;
+		top:0;
+		left:0;
+		width:1024px !important;
+		max-width:1024px !important;
+		height:450px;
+	}
+	.carousel-indicators {
+		position:absolute;
+		right:0;
+		bottom:0;
+		left:auto;
+		max-width: 30%;
+		overflow:hidden;
+	}
+	.carousel-caption {
+		position: absolute;
+		left: 5px;
+		bottom: 0;
+		padding:0;
+		max-width:180px;
+		text-align:left;
+		z-index: 10;
+	}
+	#chrs-homepage-playways .thumbnail {
+		margin-bottom:0;
+		border:none;
+	}
+	#chrs-homepage-playways .thumbnail h3 {
+		margin-top:0;
+		color:#7f7f7f;
+		font-size:16px;
+		text-align:center;
+	}
+	#chrs-homepage-hotspots-list {
+		padding:0;
+		font-size:12px;
+	}
+	#chrs-homepage-hotspots-list .col-xs-3 {
+		padding-left:0;
+	}
+	#chrs-homepage-hotspots-list h4 {
+		font-size:14px;
+	}
+	.carousel-control {
+		z-index:999;
+	}
+	#chrs-homepage-footer-links {
+		padding:10px;
+		background:#666;
+	}
+	#chrs-homepage-footer-links .media h4 a {
+		display:inline-block;
+		float:left;
+		color:#F60;
+		font-size:14px;
+		line-height:19px;
+	}
+	#chrs-homepage-footer-links .media h4 span {
+		float:left;
+		margin:0 5px;
+		color:#7f7f7f;
+	}
+}
 @media (min-width:768px) {
 	#chrs-homepage-main-carousel .item img {
 		width:100% !important;
@@ -136,7 +244,6 @@
 	#chrs-homepage-playways .thumbnail h3 {
 		margin-top:0;
 		color:#7f7f7f;
-		font-size:20px;
 		text-align:center;
 	}
 	#chrs-homepage-playways .thumbnail p {
@@ -154,19 +261,19 @@
 		font-size:24px;
 		line-height:36px;
 	}
-	#chrs-homepage-links {
+	#chrs-homepage-footer-links {
 		padding:38px 0 38px 68px;
 	}
-	#chrs-homepage-links .media .media-heading a {
+	#chrs-homepage-footer-links .media .media-heading a {
 		color:#333;
 	}
-	#chrs-homepage-links ul.list-unstyled li .text-primary {
+	#chrs-homepage-footer-links ul.list-unstyled li .text-primary {
 		display:block;
 		margin:0 0 28px;
 		color:#666;
 		font-size:12px;
 	}
-	#chrs-homepage-links ul.list-unstyled li a {
+	#chrs-homepage-footer-links ul.list-unstyled li a {
 		color:#FF6300;
 		font-size:12px;
 		line-height:18px;
@@ -186,59 +293,16 @@
 		margin-right:34px;
 	}
 }
-@media (min-width:1200px) {
-
+@media (min-width:768px) and (max-width:1200px) {
+	#chrs-homepage-playways .col-md-1 {
+		width:12.5%;
+	}
+	#chrs-homepage-playways .thumbnail h3 {
+		font-size:14px;
+	}
 }
-@media (max-width:768px) {
-	#logo {
-		position:relative;
-		margin:0 auto;
-		margin-top:-68px;
-		width:150%;
-		background:none;
-		z-index:299;
-	}
-	#logo span {
-		display:none;
-	}
-	#chrs-homepage-main-search {
-		position:absolute;
-		top:80px;
-		left:0;
-		margin: 12px 55px;
-		border-radius:10px;
-		padding: 18px;
-		/* Fallback for web browsers that doesn't support RGBa */
-		background: rgb(0, 0, 0);
-		/* RGBa with 0.6 opacity */
-		background: rgba(0, 0, 0, 0.6);
-		/* For IE 5.5 - 7*/
-		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-		/* For IE 8*/
-		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-		z-index:99;
-	}
-	#chrs-homepage-main-search #chrs-homepage-search-box #btn-chrs-main-search {
-		position:absolute;
-		left:50%;
-		margin-left:-20px;
-		border:none;
-		border-radius:20px;
-		padding:0;
-		width:40px;
-		height:40px;
-		background:url(/assets/images/desktop/search_bar_button_homepage.png) no-repeat;
-	}
-	#chrs-homepage-main-carousel .item {
-		min-height:320px;
-		overflow:hidden;
-	}
-	#chrs-homepage-main-carousel .item > img {
-		position:absolute;
-		top:0;
-		left:0;
-		width:auto !important;
-		min-width:100%;
-		min-height:320px;
+@media (min-width:1200px) {
+	#chrs-homepage-playways .thumbnail h3 {
+		font-size:20px;
 	}
 }
