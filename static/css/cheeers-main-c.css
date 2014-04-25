@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+body{ padding:0; margin:0;color:#777; font:12px/20px "微软雅黑", Verdana, sans-serif;}
+h1,h2,h3,h4,p,ul,li,dl,dt,dd,input,img,select{ padding:0; margin:0; border:none; list-style:none;}
+a:link,a:visited{ color:#777; text-decoration:none;}
+a:hover{ color:#ff7701; text-decoration:underline;}
+/*header*/
+#supplier .header{ height:80px; }
+.logo{ padding-top:13px;}
+.header .nav{line-height:80px;}
+/*contents-supplier*/
+.contents-supplier{ background:url(../images/desktop/bg2.jpg) repeat-x #ebeae6; box-shadow:10px; box-shadow:#dcdbd8;}
+.contents-supplier .supplierL{ margin-top:40px; float:left;}
+.supplierL .topbox{ border-radius:3px; border:1px solid #c9c9c9; background:#f7f6f1; margin-bottom:15px;}
+.supplierL .topbox .photo{ margin-top:28px; }
+.supplierL .topbox .photo img{ -webkit-box-shadow: #9e9e9e 0px 0px 10px; -moz-box-shadow: #9e9e9e 0px 0px 10px; box-shadow: #9e9e9e 0px 0px 10px;}
+.supplierL .topbox h3{ line-height:52px; font-family:"AvenirNext", 'Arial' , '微软雅黑';}
+.supplierL .topbox .clubbox{ margin-left:10%;}
+.topbox .clubbox li{ line-height:32px;}
+.topbox .clubbox li span{ width:25%; display:inline-block;}
+.topbox .clubbox li strong{ font-size:18px; color:#666; font-weight:normal;}
+.supplierL .topbox .btn{ width:100%; margin:5% 0;}
+.supplierL .topbox .btn .text{ background:url(../images/desktop/btn_lxwm.jpg) no-repeat; cursor:pointer; width:274px; height:40px;}
+.supplierL .centerbox{ border-radius:3px; border:1px solid #c9c9c9; background:#fff; margin-bottom:15px;}
+.supplierL .centerbox ul{ padding:5% 2%;}
+.supplierL .centerbox li{ line-height:38px;}
+.supplierL .centerbox li span{ display:inline-block; font-size:14px;}
+.supplierL .centerbox li span.one{ width:20%;}
+.supplierL .centerbox li span.two{ width:30%; color:#666;}
+.supplierL .centerbox li span.three{ width:25%; color:#ccc;}
+.supplierL .bottombox{ border-radius:3px; border:1px solid #c9c9c9; background:#f7f6f1; margin-bottom:15px; padding:2%;}
+.supplierL .bottombox .samebox{ border-bottom:1px solid #c9c9c9; overflow:hidden; padding:2% 0 5%;}
+.bottombox .samebox .left{ width:30%; height:100%; float:left; padding-top:3%;}
+.bottombox .samebox .right{ width:66%; float:left;}
+.bottombox .samebox .top{ height:38px; line-height:38px;} 
+.bottombox .samebox .start{ width:50%; float:left;}
+.bottombox .samebox .date{ width:50%; float:left;}
+.samebox .date strong{ color:#ff7b00; padding-right:5%;}
+.contents-supplier .supplierR{ margin-top:40px; float:right;}
+.supplierR .club{padding-bottom:5%;}
+.supplierR .club h1{ font-size:30px; color:#000; font-weight:bold; line-height:60px;}
+.supplierR .club p.pad{ padding:1% 0 2%;}
+.supplierR .subnav{ height:34px; border:1px solid #c9c9c9; border-radius:3px; background:#fafaf9;}
+.supplierR .subnav .left{ width:44%; float:left; line-height:32px; padding-left:2%;}
+.supplierR .subnav .navL{ width:56%; float:left; }
+.supplierR .navL li{ width:17%; line-height:32px; float:left; border-left:1px solid #c9c9c9; background:url(../images/desktop/arrow3.jpg) no-repeat 80% center;}
+.supplierR .navL li.tj{background-color:#fff; width:15%;}
+.supplierR .navL li a{ padding-left:25%;}
+.supplierR .navL li.tj a{ color:#ff7b00;}
+.supplierR .navL li:hover{ background:url(../images/desktop/arrow3.jpg) no-repeat 80% center #fff;} 
+.supplierR .piclist{ width:100%; float:left; text-align:center; overflow:hidden;}
+.supplierR .piclist .piclft{ width:50%; float:left; padding-top:5%;}
+.supplierR .piclist .piclft .photo{ width:100%; }
+.supplierR .piclist .trip{ width:90%; padding-left:15%;}
+.supplierR .piclist .trip h2{width:70%; float:left; line-height:23px; font-weight:normal; padding-top:5%;}
+.supplierR .piclist .trip h2 strong{ font-size:16px; display:block;}
+.supplierR .piclist .trip h2 span{ font-size:12px; color:#999;}
+.supplierR .piclist .trip .price{width:30%; float:right; padding-top:10px;}
+.supplierR .piclist .trip .price strong{ display:block; font-size:22px; color:#ff7b00;}
+.supplierR .piclist .trip .price span{ color:#666;}
+.supplierR .piclist .picrit{ width:50%; float:left; padding-top:5%;}
+.supplierR .piclist .picrit .photo{ border:1px solid #c9c9c9; border-radius:3px; box-shadow:#ccc; padding:3%; background:#fff; margin-bottom:7px; margin-left:10%;}
+.contents-list .bottom{ width:1000px; margin:0 auto;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
