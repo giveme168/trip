@@ -9,7 +9,7 @@ import datetime
 
 from contrib.shortcuts import json_response
 
-@render_to('company/index.html')
+@render_to('supplier/index.html')
 def index(request,cid):
     return {}
 
