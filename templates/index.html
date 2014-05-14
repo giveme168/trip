@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +7,8 @@
 <title>骑鹅旅行</title>
 
 <!-- Bootstrap -->
-<link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="{{STATIC_URL}}css/cheeers-main.css" rel="stylesheet">
+<link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="/static/css/huohuatrip-v2-main.css" rel="stylesheet">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -18,69 +17,120 @@
     <![endif]-->
 </head>
 <body id="homepage">
+<h1 id="logo"><a href="/"><img src="/static/images/desktop/homepage/logo_huohuatrip.png" class="img-responsive visible-xs"><span>Cheeers 骑鹅旅行</span></a></h1>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-lg-12" id="chrs-homepage-hero-img">
-      <div id="chrs-homepage-main-carousel" class="carousel slide" data-ride="carousel">
-        <ul class="list-inline list-unstyled" id="chrs-top-nav">
-          <li class="hidden-xs"><a href="#">旅行灵感</a></li>
-          <li class="hidden-xs"><a href="#">注册</a></li>
-          <li class="hidden-xs"><a href="#">登录</a></li>
-          <li><a href="#"><img src="/static/images/live/avatar_icon.png" width="36" height="36"></a></li>
-          <li class="hidden-xs"><a href="#"><img src="/static/images/live/button_01.png" width="75" height="25"></a></li>
+    <div class="col-xs-12 col-lg-12" id="homepage-hero-img">
+      <div id="homepage-main-carousel" class="carousel slide" data-ride="carousel">
+        <ul class="list-inline list-unstyled" id="top-nav">
+          <!--<li class="hidden-xs"><a href="#">旅行灵感</a></li>-->
+          {% if current_user %}
+          欢迎：{{current_user}}
+          <li class="hidden-xs"><a href="/account/order/">个人中心</a></li>
+          <li class="hidden-xs"><a href="/account/chart/">购物车</a></li>
+          <li class="hidden-xs"><a href="/logout/">退出</a></li>
+          {% else %}
+          <li class="hidden-xs"><a href="/register/">注册</a></li>
+          <li class="hidden-xs"><a href="/login/">登录</a></li>
+          {% endif %}
+          <!--<li><a href="#"><img src="/static/images/desktop/homepage/avatar_icon.png" width="36" height="36"></a></li>
+          <li class="hidden-xs"><a href="#"><img src="/static/images/desktop/homepage/button_01.png" width="75" height="25"></a></li>-->
         </ul>
-        <div id="chrs-homepage-main-search">
-          <h1 id="logo"><img src="/static/images/live/logo_homepage_without_shadow.png" class="img-responsive visible-xs"><span>Cheeers 骑鹅旅行</span></h1>
-          <form class="form-inline" id="chrs-homepage-search-box" role="form" action="/product/index/">
+        
+        <!--<div id="homepage-main-search">
+          <form class="form-inline" id="homepage-search-box" role="form">
             <div class="form-group">
               <label class="sr-only" for="whereToGo">你想去哪里？</label>
-              <input type="text" class="form-control" id="whereToGo" placeholder="你想去哪里？">
+              <input type="email" class="form-control" id="whereToGo" placeholder="你想去哪里？">
             </div>
             <div class="form-group">
               <label class="sr-only" for="whatToPlay">你想玩什么？</label>
-              <input type="text" class="form-control" id="whatToPlay" placeholder="你想玩什么？">
+              <input type="password" class="form-control" id="whatToPlay" placeholder="你想玩什么？">
             </div>
-            <button type="submit" class="btn btn-default" id="btn-chrs-main-search"></button>
+            <button type="submit" class="btn btn-default" id="btn-main-search"></button>
           </form>
+        </div>-->
+        <div id="homepage-main-search">
+        <div class="dropdown"><a class="dropdown-toggle" id="home-main-btn" role="button" data-toggle="dropdown" data-target="#" href="#"><i class="icon"></i> <span class="home-main-btn-txt">选择目的地</span> <span class="caret"></span> </a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="home-main-btn">
+            <ul class="pull-left list-unstyled">
+              <li><span class="lead">亚太地区</span></li>
+              <li><a href="/product/index/">香港</a></li>
+              <li><a href="/product/index/">京都</a></li>
+              <li><a href="/product/index/">曼谷</a></li>
+              <li><a href="/product/index/">新加坡</a></li>
+              <li><a href="/product/index/">首尔</a></li>
+            </ul>
+            <ul class="pull-left list-unstyled">
+              <li><span class="lead">欧洲</span></li>
+              <li><a href="/product/index/">维也纳</a></li>
+              <li><a href="/product/index/">佛罗伦萨</a></li>
+              <li><a href="/product/index/">比利时</a></li>
+              <li><a href="/product/index/">罗马</a></li>
+              <li><a href="/product/index/">阿姆斯特丹</a></li>
+            </ul>
+            <ul class="pull-left list-unstyled">
+              <li><span class="lead">北美</span></li>
+              <li><a href="/product/index/">纽约</a></li>
+              <li><a href="/product/index/">温哥华</a></li>
+              <li><a href="/product/index/">芝加哥</a></li>
+              <li><a href="/product/index/">魁北克</a></li>
+              <li><a href="/product/index/">阿拉斯加</a></li>
+            </ul>
+            <ul class="pull-left list-unstyled">
+              <li><span class="lead">南半球</span></li>
+              <li><a href="/product/index/">悉尼</a></li>
+              <li><a href="/product/index/">新西兰</a></li>
+              <li><a href="/product/index/">纳米比亚</a></li>
+              <li><a href="/product/index/">南非</a></li>
+              <li><a href="/product/index/">里约热内卢</a></li>
+            </ul>
+          </ul>
+        </div>
         </div>
         <!-- Indicators -->
         <ol class="carousel-indicators">
-          <li data-target="#chrs-homepage-main-carousel" data-slide-to="0" class="active"></li>
-          <li data-target="#chrs-homepage-main-carousel" data-slide-to="1"></li>
-          <li data-target="#chrs-homepage-main-carousel" data-slide-to="2"></li>
-          <li data-target="#chrs-homepage-main-carousel" data-slide-to="3"></li>
+          <li data-target="#homepage-main-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#homepage-main-carousel" data-slide-to="1"></li>
+          <li data-target="#homepage-main-carousel" data-slide-to="2"></li>
+          <li data-target="#homepage-main-carousel" data-slide-to="3"></li>
         </ol>
         
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-          <div class="item active"><img src="/static/images/live/bg_01.jpg" alt="澳大利亚亲子游￥1060">
+          <div class="item active"><img src="/static/images/desktop/homepage/bg_01.jpg" alt="私人直升机带你游览大堡礁，澳大利亚￥1060">
             <div class="carousel-caption">
-              <p>澳大利亚亲子游￥1060</p>
+              <p>私人直升机带你游览大堡礁，澳大利亚￥1060</p>
             </div>
           </div>
-          <div class="item"><img src="/static/images/live/4631196205_db679d17e5_o.jpg" alt="澳大利亚亲子游￥1060">
+          <div class="item"><img src="/static/images/desktop/homepage/bg_02.jpg" alt="私人直升机带你游览大堡礁，澳大利亚￥1060">
             <div class="carousel-caption">
-              <p>澳大利亚亲子游￥1060</p>
+              <p>私人直升机带你游览大堡礁，澳大利亚￥1060</p>
             </div>
           </div>
-          <div class="item"><img src="/static/images/live/2454749019_8b0c170f55_o.jpg" alt="澳大利亚亲子游￥1060">
+          <div class="item"><img src="/static/images/desktop/homepage/bg_03.jpg" alt="私人直升机带你游览大堡礁，澳大利亚￥1060">
             <div class="carousel-caption">
-              <p>澳大利亚亲子游￥1060</p>
+              <p>私人直升机带你游览大堡礁，澳大利亚￥1060</p>
             </div>
           </div>
-          <div class="item"><img src="/static/images/live/bg_02.jpg" alt="澳大利亚亲子游￥1060">
+          <div class="item"><img src="/static/images/desktop/homepage/bg_04.jpg" alt="私人直升机带你游览大堡礁，澳大利亚￥1060">
             <div class="carousel-caption">
-              <p>澳大利亚亲子游￥1060</p>
+              <p>私人直升机带你游览大堡礁，澳大利亚￥1060</p>
+            </div>
+          </div>
+          <div class="item"><img src="/static/images/desktop/homepage/bg_05.jpg" alt="私人直升机带你游览大堡礁，澳大利亚￥1060">
+            <div class="carousel-caption">
+              <p>私人直升机带你游览大堡礁，澳大利亚￥1060</p>
             </div>
           </div>
         </div>
         
         <!-- Controls --> 
-        <a class="left carousel-control" href="#chrs-homepage-main-carousel" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a> <a class="right carousel-control" href="#chrs-homepage-main-carousel" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a> </div>
+        <a class="left carousel-control" href="#homepage-main-carousel" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a> <a class="right carousel-control" href="#homepage-main-carousel" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a> </div>
     </div>
   </div>
 </div>
-<section id="chrs-homepage-playways">
+<section id="homepage-playways">
   <div class="container-fluid"> 
     <!--<div class="row">
       <div class="col-xs-12 col-lg-12">
@@ -89,65 +139,65 @@
     </div>-->
     <div class="row">
       <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1 col-lg-offset-2">
-        <div class="thumbnail"><a href="/product/index/"><img src="/static/images/live/button_icon_07.png" alt="海岛" width="90" height="90"></a>
+        <div class="thumbnail"><a href="/product/index/" class="icon-link"><img src="/static/images/desktop/homepage/icon_tag_01.png" alt="自驾" width="90" height="90"></a><a href="/product/index/" class="icon-hover"><img src="/static/images/desktop/homepage/icon_tag_01_hover.png" alt="自驾" width="90" height="90"></a>
           <div class="caption">
-            <h3>海岛</h3>
+            <h3>自驾</h3>
             <!--<p class="text-center">238<small>个</small></p>--> 
           </div>
         </div>
       </div>
       <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1">
-        <div class="thumbnail"><a href="/product/index/"><img src="/static/images/live/button_icon_08.png" alt="自驾" width="90" height="90"></a>
+        <div class="thumbnail"><a href="/product/index/" class="icon-link"><img src="/static/images/desktop/homepage/icon_tag_02.png" alt="亲子" width="90" height="90"></a><a href="/product/index/" class="icon-hover"><img src="/static/images/desktop/homepage/icon_tag_02_hover.png" alt="亲子" width="90" height="90"></a>
           <div class="caption">
-            <h3>自驾</h3>
+            <h3>亲子</h3>
             <!--<p class="text-center">3,215<small>个</small></p>--> 
           </div>
         </div>
       </div>
       <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1">
-        <div class="thumbnail"><a href="/product/index/"><img src="/static/images/live/button_icon_09.png" alt="赏花" width="90" height="90"></a>
+        <div class="thumbnail"><a href="/product/index/" class="icon-link"><img src="/static/images/desktop/homepage/icon_tag_03.png" alt="探险" width="90" height="90"></a><a href="/product/index/" class="icon-hover"><img src="/static/images/desktop/homepage/icon_tag_03_hover.png" alt="探险" width="90" height="90"></a>
           <div class="caption">
-            <h3>帐篷</h3>
+            <h3>探险</h3>
             <!--<p class="text-center">2,051<small>个</small></p>--> 
           </div>
         </div>
       </div>
       <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1">
-        <div class="thumbnail"><a href="/product/index/"><img src="/static/images/live/button_icon_10.png" alt="邮轮" width="90" height="90"></a>
+        <div class="thumbnail"><a href="/product/index/" class="icon-link"><img src="/static/images/desktop/homepage/icon_tag_04.png" alt="国家公园" width="90" height="90"></a><a href="/product/index/" class="icon-hover"><img src="/static/images/desktop/homepage/icon_tag_04_hover.png" alt="国家公园" width="90" height="90"></a>
           <div class="caption">
-            <h3>邮轮</h3>
+            <h3>国家公园</h3>
             <!--<p class="text-center">2,051<small>个</small></p>--> 
           </div>
         </div>
       </div>
       <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1">
-        <div class="thumbnail"><a href="/product/index/"><img src="/static/images/live/button_icon_11.png" alt="摄影" width="90" height="90"></a>
+        <div class="thumbnail"><a href="/product/index/" class="icon-link"><img src="/static/images/desktop/homepage/icon_tag_05.png" alt="特色酒店" width="90" height="90"></a><a href="/product/index/" class="icon-hover"><img src="/static/images/desktop/homepage/icon_tag_05_hover.png" alt="特色酒店" width="90" height="90"></a>
+          <div class="caption">
+            <h3>特色酒店</h3>
+            <!--<p class="text-center">25,309<small>个</small></p>--> 
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1">
+        <div class="thumbnail"><a href="/product/index/" class="icon-link"><img src="/static/images/desktop/homepage/icon_tag_06.png" alt="摄影" width="90" height="90"></a><a href="/product/index/" class="icon-hover"><img src="/static/images/desktop/homepage/icon_tag_06_hover.png" alt="摄影" width="90" height="90"></a>
           <div class="caption">
             <h3>摄影</h3>
-            <!--<p class="text-center">2,051<small>个</small></p>--> 
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1">
-        <div class="thumbnail"><a href="/product/index/"><img src="/static/images/live/button_icon_12.png" alt="美食" width="90" height="90"></a>
-          <div class="caption">
-            <h3>美食</h3>
             <!--<p class="text-center">25,309<small>个</small></p>--> 
           </div>
         </div>
       </div>
       <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1">
-        <div class="thumbnail"><a href="/product/index/"><img src="/static/images/live/button_icon_13.png" alt="亲子" width="90" height="90"></a>
+        <div class="thumbnail"><a href="/product/index/" class="icon-link"><img src="/static/images/desktop/homepage/icon_tag_07.png" alt="蜜月" width="90" height="90"></a><a href="/product/index/" class="icon-hover"><img src="/static/images/desktop/homepage/icon_tag_07_hover.png" alt="蜜月" width="90" height="90"></a>
           <div class="caption">
-            <h3>亲子</h3>
+            <h3>蜜月</h3>
             <!--<p class="text-center">25,309<small>个</small></p>--> 
           </div>
         </div>
       </div>
       <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1">
-        <div class="thumbnail"><a href="/product/index/"><img src="/static/images/live/button_icon_14.png" alt="更多主题" width="90" height="90"></a>
+        <div class="thumbnail"><a href="/product/index/" class="icon-link"><img src="/static/images/desktop/homepage/icon_tag_08.png" alt="徒步" width="90" height="90"></a><a href="/product/index/" class="icon-hover"><img src="/static/images/desktop/homepage/icon_tag_08_hover.png" alt="徒步" width="90" height="90"></a>
           <div class="caption">
-            <h3>更多主题</h3>
+            <h3>徒步</h3>
             <!--<p class="text-center">25,309<small>个</small></p>--> 
           </div>
         </div>
@@ -155,7 +205,7 @@
     </div>
   </div>
 </section>
-<section id="chrs-homepage-hotspots">
+<section id="homepage-hotspots">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-12 col-lg-12">
@@ -163,56 +213,49 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-md-6 col-lg-6"> <a href="/product/index/" class="thumbnail"> <img src="/static/images/live/image_01.png" alt="巴塞罗那">
+      <div class="col-xs-12 col-md-6 col-lg-6"> <a href="/product/index/" class="thumbnail"> <img src="/static/images/desktop/homepage/image_01.png" alt="巴塞罗那">
         <div class="caption">
           <h3>巴塞罗那</h3>
         </div>
+        </a> <a href="/product/index/" class="col-xs-6 col-md-6 col-lg-6 thumbnail"> <img src="/static/images/desktop/homepage/image_06.png" alt="台湾">
+        <div class="caption">
+          <h3>台湾</h3>
+        </div>
+        </a> <a href="/product/index/" class="col-xs-6 col-md-6 col-lg-6 thumbnail"> <img src="/static/images/desktop/homepage/image_07.png" alt="旧金山">
+        <div class="caption">
+          <h3>旧金山</h3>
+        </div>
+        </a> </div>
+      <div class="col-xs-12 col-md-6 col-lg-6"> <a href="#" class="col-xs-6 col-md-6 col-lg-6 thumbnail"> <img src="/static/images/desktop/homepage/image_02.png" alt="巴黎">
+        <div class="caption">
+          <h3>巴黎</h3>
+        </div>
+        </a> <a href="/product/index/" class="col-xs-6 col-md-6 col-lg-6 thumbnail"> <img src="/static/images/desktop/homepage/image_03.png" alt="清迈">
+        <div class="caption">
+          <h3>清迈</h3>
+        </div>
+        </a> <a href="/product/index/" class="col-xs-6 col-md-6 col-lg-6 thumbnail"> <img src="/static/images/desktop/homepage/image_04.png" alt="奈良">
+        <div class="caption">
+          <h3>奈良</h3>
+        </div>
+        </a> <a href="/product/index/" class="col-xs-6 col-md-6 col-lg-6 thumbnail"> <img src="/static/images/desktop/homepage/image_05.png" alt="马尔代夫">
+        <div class="caption">
+          <h3>马尔代夫</h3>
+        </div>
         </a>
-        <a href="/product/index/" class="col-xs-6 col-md-6 col-lg-6 thumbnail"> <img src="/static/images/live/image_06.png" alt="台湾">
-          <div class="caption">
-            <h3>台湾</h3>
-          </div>
-          </a>
-        <a href="/product/index/" class="col-xs-6 col-md-6 col-lg-6 thumbnail"> <img src="/static/images/live/image_07.png" alt="旧金山">
-          <div class="caption">
-            <h3>旧金山</h3>
-          </div>
-          </a>
-      </div>
-      <div class="col-xs-12 col-md-6 col-lg-6">
-        <a href="/product/index/" class="col-xs-6 col-md-6 col-lg-6 thumbnail"> <img src="/static/images/live/image_02.png" alt="巴黎">
-          <div class="caption">
-            <h3>巴黎</h3>
-          </div>
-          </a>
-        <a href="/product/index/" class="col-xs-6 col-md-6 col-lg-6 thumbnail"> <img src="/static/images/live/image_03.png" alt="清迈">
-          <div class="caption">
-            <h3>清迈</h3>
-          </div>
-          </a>
-        <a href="/product/index/" class="col-xs-6 col-md-6 col-lg-6 thumbnail"> <img src="/static/images/live/image_04.png" alt="奈良">
-          <div class="caption">
-            <h3>奈良</h3>
-          </div>
-          </a>
-        <a href="/product/index/" class="col-xs-6 col-md-6 col-lg-6 thumbnail"> <img src="/static/images/live/image_05.png" alt="马尔代夫">
-          <div class="caption">
-            <h3>马尔代夫</h3>
-          </div>
-          </a>
-        <div class="col-xs-12 col-md-12 col-lg-12" id="chrs-homepage-hotspots-list">
+        <div class="col-xs-12 col-md-12 col-lg-12" id="homepage-hotspots-list">
           <div class="col-xs-3 col-md-3">
             <ul class="list-unstyled pull-left">
               <li>
                 <h4>亚太地区</h4>
               </li>
-              <li><a href="#">香港</a></li>
-              <li><a href="#">京都</a></li>
-              <li><a href="#">曼谷</a></li>
-              <li><a href="#">新加坡</a></li>
-              <li><a href="#">首尔</a></li>
-              <li><a href="#">东京</a></li>
-              <li><a href="#">吉隆坡</a></li>
+              <li><a href="/product/index/">香港</a></li>
+              <li><a href="/product/index/">京都</a></li>
+              <li><a href="/product/index/">曼谷</a></li>
+              <li><a href="/product/index/">新加坡</a></li>
+              <li><a href="/product/index/">首尔</a></li>
+              <li><a href="/product/index/">东京</a></li>
+              <li><a href="/product/index/">吉隆坡</a></li>
             </ul>
           </div>
           <div class="col-xs-3 col-md-3">
@@ -220,11 +263,11 @@
               <li>
                 <h4>欧洲</h4>
               </li>
-              <li><a href="#">维也纳</a></li>
-              <li><a href="#">佛罗伦萨</a></li>
-              <li><a href="#">比利时</a></li>
-              <li><a href="#">罗马</a></li>
-              <li><a href="#">阿姆斯特丹</a></li>
+              <li><a href="/product/index/">维也纳</a></li>
+              <li><a href="/product/index/">佛罗伦萨</a></li>
+              <li><a href="/product/index/">比利时</a></li>
+              <li><a href="/product/index/">罗马</a></li>
+              <li><a href="/product/index/">阿姆斯特丹</a></li>
             </ul>
           </div>
           <div class="col-xs-3 col-md-3">
@@ -232,11 +275,11 @@
               <li>
                 <h4>北美</h4>
               </li>
-              <li><a href="#">纽约</a></li>
-              <li><a href="#">温哥华</a></li>
-              <li><a href="#">芝加哥</a></li>
-              <li><a href="#">魁北克</a></li>
-              <li><a href="#">阿拉斯加</a></li>
+              <li><a href="/product/index/">纽约</a></li>
+              <li><a href="/product/index/">温哥华</a></li>
+              <li><a href="/product/index/">芝加哥</a></li>
+              <li><a href="/product/index/">魁北克</a></li>
+              <li><a href="/product/index/">阿拉斯加</a></li>
             </ul>
           </div>
           <div class="col-xs-3 col-md-3">
@@ -244,11 +287,11 @@
               <li>
                 <h4>南半球</h4>
               </li>
-              <li><a href="#">悉尼</a></li>
-              <li><a href="#">新西兰</a></li>
-              <li><a href="#">纳米比亚</a></li>
-              <li><a href="#">南非</a></li>
-              <li><a href="#">里约热内卢</a></li>
+              <li><a href="/product/index/">悉尼</a></li>
+              <li><a href="/product/index/">新西兰</a></li>
+              <li><a href="/product/index/">纳米比亚</a></li>
+              <li><a href="/product/index/">南非</a></li>
+              <li><a href="/product/index/">里约热内卢</a></li>
             </ul>
           </div>
         </div>
@@ -257,39 +300,39 @@
   </div>
   </div>
 </section>
-<section class="hidden-xs" id="chrs-homepage-members">
+<!--<section class="hidden-xs" id="homepage-members">
   <div class="container">
-    <div class="row" id="chrs-homepage-thumbnails">
+    <div class="row" id="homepage-thumbnails">
       <h2 class="text-center">在这里，跟<span class="text-warning">3568</span>位骑士一起Cheeers!</h2>
       <div class="col-sm-6 col-md-6 col-lg-6">
-        <div class="thumbnail"><a href="/supplier/1000/index/"><img src="/static/images/live/gallery_01_with_both_image_and_signature.png" class="img-responsive"></a>
+        <div class="thumbnail"><a href="#"><img src="/static/images/desktop/homepage/gallery_01_with_both_image_and_signature.png" class="img-responsive"></a>
           <div class="caption">
-            <p><img src="/static/images/live/quotation_marks_left.png">　螺旋桨其实只令飞行员凉快，当大风扇停了，基本上会看到飞行员开始冒汗了……<img src="/static/images/live/quotation_marks_right.png"></p>
+            <p><img src="/static/images/desktop/homepage/quotation_marks_left.png">　螺旋桨其实只令飞行员凉快，当大风扇停了，基本上会看到飞行员开始冒汗了……<img src="/static/images/desktop/homepage/quotation_marks_right.png"></p>
           </div>
         </div>
       </div>
       <div class="col-sm-6 col-md-6 col-lg-6">
         <div class="col-sm-6 col-md-6 col-lg-6">
-          <div class="thumbnail"><a href="/supplier/1000/index/"><img src="/static/images/live/gallery_02_with_both_image_and_signature.png" class="img-responsive"></a></div>
+          <div class="thumbnail"><a href="#"><img src="/static/images/desktop/homepage/gallery_02_with_both_image_and_signature.png" class="img-responsive"></a></div>
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6">
-          <div class="thumbnail"><a href="/supplier/1000/index/"><img src="/static/images/live/gallery_03_with_both_image_and_signature.png" class="img-responsive"></a></div>
+          <div class="thumbnail"><a href="#"><img src="/static/images/desktop/homepage/gallery_03_with_both_image_and_signature.png" class="img-responsive"></a></div>
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6">
-          <div class="thumbnail"><a href="/supplier/1000/index/"><img src="/static/images/live/gallery_04_with_both_image_and_signature.png" class="img-responsive"></a></div>
+          <div class="thumbnail"><a href="#"><img src="/static/images/desktop/homepage/gallery_04_with_both_image_and_signature.png" class="img-responsive"></a></div>
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6">
-          <div class="thumbnail"><a href="/supplier/1000/index/"><img src="/static/images/live/gallery_05_with_both_image_and_signature.png" class="img-responsive"></a></div>
+          <div class="thumbnail"><a href="#"><img src="/static/images/desktop/homepage/gallery_05_with_both_image_and_signature.png" class="img-responsive"></a></div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section>-->
 <section>
-  <div class="container" id="chrs-homepage-footer-links">
+  <div class="container" id="homepage-footer-links">
     <div class="row">
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <div class="media"> <a class="pull-left" href="#"> <img class="media-object" src="../static/images/live/flag_uk.png" alt="Cheeers in English"> </a>
+        <div class="media"> <a class="pull-left" href="#"> <img class="media-object" src="/static/images/desktop/homepage/flag_uk.png" alt="Cheeers in English"> </a>
           <div class="media-body">
             <h4 class="media-heading"><a href="#">Cheeers in English</a><span class="visible-xs"> | </span><a href="#" class="visible-xs">帮助</a><span class="visible-xs"> | </span><a href="#" class="visible-xs">桌面版</a></h4>
           </div>
@@ -301,7 +344,7 @@
           <li><a href="/safe/">信任与安全</a></li>
           <li><a href="#">邀请好友</a></li>
           <li><a href="#">Cheeers灵感</a></li>
-          <li><a href="#">Cheeers骑士</a></li>
+          <li><a href="/supplier/1000/index/">Cheeers骑士</a></li>
           <li><a href="#">移动版</a></li>
           <li><a href="#">为什么要旅行？</a></li>
           <li><a href="#">做个文明的旅行家</a></li>
@@ -331,23 +374,23 @@
           <li>
             <p>&nbsp;</p>
           </li>
-          <li><img src="/static/images/live/slogan.png" alt="预订你的旅行灵感"></li>
+          <li><img src="/static/images/desktop/homepage/slogan.png" alt="预订你的旅行灵感"></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
-<footer>
+<!--<footer>
   <div class="container">
     <div class="row hidden-xs">
       <ul class="list-unstyled list-inline pull-left">
         <li><span>合作媒体：</span></li>
-        <li><a href="#"><img src="/static/images/live/logo_cnt.png" alt=""></a></li>
-        <li><a href="#"><img src="/static/images/live/logo_tc.png" alt=""></a></li>
-        <li><a href="#"><img src="/static/images/live/logo_bloomberg_business.png" alt=""></a></li>
-        <li><a href="#"><img src="/static/images/live/logo_tl.png" alt=""></a></li>
+        <li><a href="#"><img src="/static/images/desktop/homepage/logo_cnt.png" alt=""></a></li>
+        <li><a href="#"><img src="/static/images/desktop/homepage/logo_tc.png" alt=""></a></li>
+        <li><a href="#"><img src="/static/images/desktop/homepage/logo_bloomberg_business.png" alt=""></a></li>
+        <li><a href="#"><img src="/static/images/desktop/homepage/logo_tl.png" alt=""></a></li>
       </ul>
-      <a href="#" class="pull-right"><img src="/static/images/live/logo_webede.png" alt="webelievedesign"></a>
+      <a href="#" class="pull-right"><img src="/static/images/desktop/homepage/logo_webede.png" alt="webelievedesign"></a>
       <div class="clearfix"></div>
     </div>
     <div class="row">
@@ -356,21 +399,49 @@
         </div>
     </div>
   </div>
+</footer>-->
+<footer>
+  <div class="container">
+    <div class="row text-center">
+      <ul class="list-unstyled list-inline">
+        <li><a href="#">关于我们</a></li>
+        <li><a href="#">网站地图</a></li>
+        <li><a href="#">隐私条款</a></li>
+        <li><a href="#">信任与安全</a></li>
+      </ul>
+      <ul class="list-unstyled list-inline">
+        <li>京ICP备12345666-1</li>
+        <li>京公安网备20140405001</li>
+        <li>经营性网站备案1233445555</li>
+      </ul>
+      <p>&copy;火花旅行 2014</p>
+    </div>
+  </div>
 </footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="/static/jquery/jquery-1.10.2.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="/static/bootstrap/js/bootstrap.min.js"></script> 
+<script>
+$(document).ready(function() {
+  $('#homepage-main-carousel').carousel({
+    interval: 4000
+  });
+  $(".icon-hover").hide();
+  $(".thumbnail").hover(
+    function(){
+      $(this).children(".icon-link").hide();
+      $(this).children(".icon-hover").show();
+    }
+    , function(){
+      $(this).children(".icon-hover").hide();
+      $(this).children(".icon-link").show();
+    }
+  );
+})
+</script>
 <div style="display:none;">
   <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5828818'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/stat.php%3Fid%3D5828818%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 </div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="{{ STATIC_URL }}js/jquery-1.10.2.min.js"></script> 
-<!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script> 
-<script>
-$(document).ready(function() {
-  $('#chrs-homepage-main-carousel').carousel({
-    interval: 4000
-  });
-})
-</script>
-
 </body>
 </html>

@@ -19,7 +19,7 @@ def alipay(request,pid):
     product = Products.objects.get(id=pid)
     notify_url_default = 'http://www.gettrip.com/alipay/notify'
     return_url_default = 'http://www.gettrip.com/alipay/redirect'
-    ret_url = pay_req(product.id, product.name, product.name, product.price, notify_url = notify_url_default, return_url = return_url_default)
+    ret_url = pay_req(product.id, product.name, product.name, 1, notify_url = notify_url_default, return_url = return_url_default)
     return HttpResponseRedirect(ret_url)
 
 @render_to('ink/product/index.html')

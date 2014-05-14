@@ -1,0 +1,98 @@
+{% extends 'base-v2.html' %}
+{% load url from future %}
+
+{% block content %}
+<section class="ucenter">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <ul class="breadcrumb">
+          <li><a href="/">首页</a></li>
+          <li><a href="/account/order/">用户中心</a></li>
+          <li><a href="/account/order/">我的订单</a></li>
+          <li><strong>订单详情</strong></li>
+        </ul>
+        <div class="page-header">
+          <h1>订单详情 <small>订单编号：964a56ae-2010122111445034</small></h1>
+        </div>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#">订单详情</a></li>
+        </ul>
+        <dl class="dl-horizontal">
+          <dt>收货地址：</dt>
+          <dd>王可 ，15601622633 ，021-54657572 ，上海 上海市 卢湾区 南昌路195号三楼A ，200020</dd>
+          <dt>买家留言：</dt>
+          <dd>老板快发货哦</dd>
+          <hr>
+          <dt>订单信息：</dt>
+          <dd>
+            <ul class="list-unstyled">
+              <li><strong>订单编号：</strong><span>964a56ae-2010122111445034</span></li>
+              <li><strong>成交时间：</strong><span>2013-05-09 15:13:08</span></li>
+              <li><strong>付款时间：</strong><span>2013-05-09 17:13:08</span></li>
+              <li><strong>发货时间：</strong><span>2013-05-09 19:13:08</span></li>
+              <li><strong>收货时间：</strong><span>2013-05-10 20:13:08</span></li>
+            </ul>
+          </dd>
+        </dl>
+        <table class="order-details-items table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>商品</th>
+              <th>商品属性</th>
+              <th>单价（元）</th>
+              <th>数量</th>
+              <th>优惠</th>
+              <th>商品总价（元）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="order-item">
+              <td><a href="#" class="order-item-thumb"><img src="/static/images/assets/pic_1.jpg" alt="item 01" class="item-thumb"></a>
+                <div class="order-item-desc"><a href="#">Jcrew/j crew 欧美男裝 纯棉短袖原单POLO BROKEN-IN POCKE</a></div></td>
+              <td><span>颜色: 浅蓝色</span><span>尺码: 170/90(M)</span></td>
+              <td>9999.00</td>
+              <td>9999</td>
+              <td>八折</td>
+              <td rowspan="4" class="order-price"><strong>99999999</strong></td>
+            </tr>
+            <tr class="order-item">
+              <td><a href="#" class="order-item-thumb"><img src="/static/images/assets/pic_2.jpg" alt="item 02"  class="item-thumb"></a>
+                <div class="order-item-desc"><a href="#">Jcrew/j crew 欧美男裝 纯棉短袖原单POLO BROKEN-IN POCKE</a></div></td>
+              <td><span>颜色: 浅蓝色</span><span>尺码: 170/90(M)</span></td>
+              <td>9999.00</td>
+              <td>9999</td>
+              <td>八折</td>
+            </tr>
+            <tr class="order-item">
+              <td><a href="#" class="order-item-thumb"><img src="/static/images/assets/pic_3.jpg" alt="item 03" class="item-thumb"></a>
+                <div class="order-item-desc"><a href="#">Jcrew/j crew 欧美男裝 纯棉短袖原单POLO BROKEN-IN POCKE</a></div></td>
+              <td><span>颜色: 浅蓝色</span><span>尺码: 170/90(M)</span></td>
+              <td>9999.00</td>
+              <td>9999</td>
+              <td>八折</td>
+            </tr>
+            <tr class="order-item">
+              <td><a href="#" class="order-item-thumb"><img src="/static/images/assets/pic_4.jpg" alt="item 04" class="item-thumb"></a>
+                <div class="order-item-desc"><a href="#">Jcrew/j crew 欧美男裝 纯棉短袖原单POLO BROKEN-IN POCKE</a></div></td>
+              <td><span>颜色: 浅蓝色</span><span>尺码: 170/90(M)</span></td>
+              <td>9999.00</td>
+              <td>9999</td>
+              <td>八折</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul class="list-unstyled pull-right">
+          <li>
+            <div class="cart-price-all"><strong class="lead pull-left">应付款：</strong><strong class="lead text-danger pull-right">¥665.00</strong></div>
+          </li>
+          <li>
+            <div class="cart-price-all"><strong class="lead pull-left">已付款： ¥665.00</strong></div>
+          </li>
+          <li><a href="#" class="btn btn-primary pull-right">付　款</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

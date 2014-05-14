@@ -1,0 +1,96 @@
+{% extends 'base-v2.html' %}
+{% load url from future %}
+
+{% block content %}
+<section class="ucenter">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+      <ul class="breadcrumb">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">用户中心</a></li>
+        <li><strong>购物车</strong></li>
+      </ul>
+      <div class="page-header">
+      	<h1>购物车</h1>
+      </div>
+        <table class="order-details-items table table-striped" id="cart-list">
+          <thead>
+            <tr>
+              <th>商品</th>
+              <th>商品属性</th>
+              <th>单价（元）</th>
+              <th>数量</th>
+              <th>优惠</th>
+              <th>商品总价（元）</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="order-item">
+              <td><a href="#" class="order-item-thumb"><img src="/static/images/assets/pic_1.jpg" class="item-thumb"></a>
+                <div class="order-item-desc"><a href="#">Jcrew/j crew 欧美男裝 纯棉短袖原单POLO BROKEN-IN POCKE</a></div></td>
+              <td><span>颜色: 浅蓝色</span><span>尺码: 170/90(M)</span></td>
+              <td>9999.00</td>
+              <td><span class="cart-quantity-input">
+                <input value="1" numlimit="999" numlowest="1">
+                </span></td>
+              <td>八折</td>
+              <td><span class="text-error">9999999</span></td>
+              <td><button class="btn btn-default btn-xs" type="button">删除</button>
+                <button class="btn btn-default btn-xs" type="button">移入收藏夹</button></td>
+            </tr>
+            <tr class="order-item">
+              <td><a href="#" class="order-item-thumb"><img src="/static/images/assets/pic_2.jpg"  class="item-thumb"></a>
+                <div class="order-item-desc"><a href="#">Jcrew/j crew 欧美男裝 纯棉短袖原单POLO BROKEN-IN POCKE</a></div></td>
+              <td><span>颜色: 浅蓝色</span><span>尺码: 170/90(M)</span></td>
+              <td>9999.00</td>
+              <td><span class="cart-quantity-input">
+                <input value="1" numlimit="999" numlowest="1">
+                </span></td>
+              <td>八折</td>
+              <td><span class="text-error">9999999</span></td>
+              <td><button class="btn btn-default btn-xs" type="button">删除</button>
+                <button class="btn btn-default btn-xs" type="button">移入收藏夹</button></td>
+            </tr>
+            <tr class="order-item">
+              <td><a href="#" class="order-item-thumb"><img src="/static/images/assets/pic_3.jpg" class="item-thumb"></a>
+                <div class="order-item-desc"><a href="#">Jcrew/j crew 欧美男裝 纯棉短袖原单POLO BROKEN-IN POCKE</a></div></td>
+              <td><span>颜色: 浅蓝色</span><span>尺码: 170/90(M)</span></td>
+              <td>9999.00</td>
+              <td><span class="cart-quantity-input">
+                <input value="1" numlimit="999" numlowest="1">
+                </span></td>
+              <td>八折</td>
+              <td><span class="text-error">9999999</span></td>
+              <td><button class="btn btn-default btn-xs" type="button">删除</button>
+                <button class="btn btn-default btn-xs" type="button">移入收藏夹</button></td>
+            </tr>
+            <tr class="order-item">
+              <td><a href="#" class="order-item-thumb"><img src="/static/images/assets/pic_4.jpg" class="item-thumb"></a>
+                <div class="order-item-desc"><a href="#">Jcrew/j crew 欧美男裝 纯棉短袖原单POLO BROKEN-IN POCKE</a></div></td>
+              <td><span>颜色: 浅蓝色</span><span>尺码: 170/90(M)</span></td>
+              <td>9999.00</td>
+              <td><span class="cart-quantity-input">
+                <input value="1" numlimit="999" numlowest="1">
+                </span></td>
+              <td>八折</td>
+              <td><span class="text-error">9999999</span></td>
+              <td><button class="btn btn-default btn-xs" type="button">删除</button>
+                <button class="btn btn-default btn-xs" type="button">移入收藏夹</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <ul class="list-unstyled pull-right">
+          <li class="clearfix"><span class="pull-left">商品总价：</span><span class="pull-right">¥9999.99</span></li>
+          <li class="clearfix"><span class="pull-left">促销优惠：</span><span class="pull-right">-¥45.00</span></li>
+          <li>
+            <div class="cart-price-all"><strong class="lead pull-left">实付款：</strong><strong class="lead text-danger pull-right">¥665.00</strong></div>
+          </li>
+          <li><a href="#" class="btn btn-primary pull-right">结　算</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

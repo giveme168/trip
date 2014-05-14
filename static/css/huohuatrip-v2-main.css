@@ -1,0 +1,748 @@
+@charset "utf-8";
+/* CSS Document */
+/* Huohua Trip - 全局样式 */
+body {
+	color: #777;
+	font: 12px/20px "微软雅黑", Verdana, sans-serif;
+	background-color:#ebeae6;
+}
+a {
+	color: #777;
+	text-decoration: none;
+}
+a:hover {
+	color: #ff7701;
+	text-decoration: underline;
+}
+.img-vertical-middler {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	box-sizing:inherit;
+}
+/* 页面布局 */
+/* Header */
+header {
+	position:relative;
+	margin-bottom:38px;
+	height: 80px;
+	box-shadow:#a4a4a4 0 6px 18px;
+	z-index:999;
+	background-color:#fff;
+}
+#logo {
+	float:left;
+	margin:0;
+}
+#logo a {
+	display:block;
+	margin-top:10px;
+	width:135px;
+	height:50px;
+}
+#logo span {
+	visibility:hidden;
+}
+header .top-nav-func {
+	position:relative;
+	display:block;
+	top:30px;
+	min-height: 80px;
+	overflow:hidden;
+}
+header .top-nav-func > li > a {
+	display:block;
+	padding: 3px 16px 3px 0;
+	min-height:20px;
+	line-height:20px;
+}
+header .top-nav-func > li:first-child > a {
+	border-right:1px solid #999;
+}
+footer {
+	margin-top:38px;
+	padding:18px 0 18px;
+	color:#4C433C;
+	background:#2f2a26;
+}
+footer a {
+	color:#7a7267 !important;
+}
+
+
+
+/* Huohua Trip - Homepage */
+/* 由Goddy维护 */
+/* 首页 */
+#top-nav {
+	position:absolute;
+	top:18px;
+	right:24px;
+	display:block;
+	z-index:99;
+	overflow:hidden;
+}
+#top-nav a {
+	color:#fff;
+}
+#homepage-hero-img {
+	padding:0;
+}
+#homepage-main-carousel {
+	z-index:0;
+}
+#homepage-main-search {
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top:-20px;
+	margin-left:-100px;
+	width:200px;
+	z-index:99;
+}
+#home-main-btn {
+	position:relative;
+	margin:0;
+	border-radius:5px;
+	padding:15px;
+	width:200px;
+	height:40px;
+	font-size:18px;
+	color: #000;
+	text-decoration:none;
+	background: -webkit-linear-gradient(#FF6500, #FF9800); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#FF6500, #FF9800); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#FF6500, #FF9800); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#FF6500, #FF9800); /* Standard syntax (must be last) */
+}
+#home-main-btn .home-main-btn-txt {
+	display:inline-block;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
+}
+#home-main-btn .icon {
+	position:relative;
+	display:inline-block;
+	top:5px;
+	width:20px;
+	height:25px;
+	margin-right:15px;
+	background: url(/static/images/desktop/homepage/icon_selector_collapse.png) no-repeat;
+}
+.open #home-main-btn {
+	border-bottom-left-radius:0;
+	border-bottom-right-radius:0;
+	background: rgba(255,255,255,0.9);
+}
+.open #home-main-btn .icon {
+	background: url(/static/images/desktop/homepage/icon_selector.png) no-repeat;
+}
+#homepage-main-search .dropdown-menu {
+	left:-75%;
+	padding:20px;
+	width:240%;
+	background-color: rgba(255,255,255,0.9);
+}
+#homepage-main-search .dropdown-menu ul {
+	margin-right:60px;
+}
+#homepage-main-search .dropdown-menu ul:last-child {
+	margin-right:0;
+}
+#homepage-main-search .dropdown-menu .lead {
+	font-size:14px;
+	font-weight:bold;
+}
+/*#homepage-main-search #homepage-search-box #btn-main-search {
+	margin:0;
+	border:none;
+	border-radius:20px;
+	padding:0;
+	width:40px;
+	height:40px;
+	background:url(/static/images/desktop/homepage/search_bar_button_homepage.png) no-repeat;
+}*/
+#homepage-playways {
+	border-bottom:1px solid #d3d2cf;
+	padding-top:22px;
+	position:relative;
+/*	box-shadow:#a4a4a4 0 6px 10px;*/
+	background-color:#f8f8f7;
+	z-index:999;
+}
+#homepage-playways .thumbnail {
+	background-color:transparent;
+}
+#homepage-hotspots {
+	border-bottom:1px solid #d3d2cf;
+	background-color:#ebeae6;
+}
+#homepage-hotspots .thumbnail {
+	position:relative;
+	border:none;
+/*	padding:0;*/
+	background:none;
+}
+#homepage-hotspots .thumbnail .caption {
+	position:absolute;
+	margin-top:-20px;
+	top:50%;
+	width:100%;
+	text-align:center;
+}
+#homepage-hotspots .thumbnail .caption h3 {
+	margin:0;
+	height:40px;
+	font-size:28px;
+	color:#fff;
+	line-height:40px;
+}
+/*#homepage-hotspots ul {
+	margin-right:10%;
+}*/
+#homepage-members {
+	position:relative;
+	padding:38px 0;
+	background:#dcdad0;
+	z-index:99;
+}
+#homepage-members #homepage-thumbnails .thumbnail {
+	border:none;
+	padding:0;
+	background:none;
+}
+
+
+
+/* Huohua Trip - User Center 用户中心 通用样式 */
+.ucenter .nav-tabs {
+	margin-bottom:15px;
+}
+.ucenter img.item-thumb {
+	float:left;
+	margin-right:5px;
+	max-width:120px;
+}
+
+/* Huohua Trip - Shopping Cart 购物车 */
+/* 由Goddy维护 */
+span.cart-quantity-input {
+	float: left;
+	margin: 0 3px;
+	border: 1px solid #8a8a8a;
+	font-size: 0;
+}
+span.cart-quantity-input input {
+	padding: 0;
+	width: 25px;
+	height: 18px;
+	line-height: 18px;
+	border: none;
+	border-left: 2px solid #f2f2f2;
+	border-top: 2px solid #f2f2f2;
+	font-size: 12px;
+}
+#shopping-cart .cart-price-all {
+	margin-top: 10px;
+	border-top: 1px solid #e4e4e4;
+}
+/* Huohua Trip - Orders List 订单列表 */
+/* 由Goddy维护 */
+#orders-list {
+	margin-bottom: 15px;
+}
+
+/* Huohua Trip - Order Detail 订单详情 */
+table.order-details-items > tbody > tr > td {
+	/* text-align: center; */
+	vertical-align: middle;
+}
+
+/* 由Goddy维护之页面 Media Queries */
+@media (max-width:767px) {
+	#logo {
+		position:relative;
+		margin:0 auto;
+		margin-top:-68px;
+		width:120%;
+		background:none;
+		z-index:299;
+	}
+	#logo span {
+		display:none;
+	}
+
+	#homepage-main-carousel .item {
+		min-height:400px;
+/*		overflow:hidden;*/
+	}
+	#homepage-main-carousel .item > img {
+		position:absolute;
+		top:0;
+		left:0;
+		width:1024px !important;
+		max-width:1024px !important;
+		height:450px;
+	}
+	.carousel-indicators {
+		position:absolute;
+		right:0;
+		bottom:0;
+		left:auto;
+		max-width: 30%;
+		overflow:hidden;
+	}
+	.carousel-caption {
+		position: absolute;
+		left: 5px;
+		bottom: 0;
+		padding:0;
+		max-width:180px;
+		text-align:left;
+		z-index: 10;
+	}
+	#homepage-playways .thumbnail {
+		margin-bottom:0;
+		border:none;
+	}
+	#homepage-playways .thumbnail h3 {
+		margin-top:0;
+		color:#7f7f7f;
+		font-size:16px;
+		text-align:center;
+	}
+	#homepage-hotspots-list {
+		padding:0;
+		font-size:12px;
+	}
+	#homepage-hotspots-list .col-xs-3 {
+		padding-left:0;
+	}
+	#homepage-hotspots-list h4 {
+		font-size:14px;
+	}
+	.carousel-control {
+		z-index:999;
+	}
+	#homepage-footer-links {
+		padding:10px;
+		background:#666;
+	}
+	#homepage-footer-links .media h4 a {
+		display:inline-block;
+		float:left;
+		color:#F60;
+		font-size:14px;
+		line-height:19px;
+	}
+	#homepage-footer-links .media h4 span {
+		float:left;
+		margin:0 5px;
+		color:#7f7f7f;
+	}
+}
+@media (min-width:768px) {
+	#homepage-main-carousel .item img {
+		width:100% !important;
+		height:auto;
+	}
+
+	/*#homepage-main-search {
+		position:absolute;
+		top:50%;
+		left:50%;
+		margin-top:-120px;
+		margin-left:-390px;
+		width:780px;
+		overflow:hidden;
+		z-index:99;
+	}*/
+	#homepage-main-search #homepage-search-box {
+		position:relative;
+		display:inline-block;
+		margin:88px 0;
+		border-radius:34px;
+		padding:10px;
+		padding-left:74px;
+		/* Fallback for web browsers that doesn't support RGBa */
+		background: rgb(0, 0, 0);
+		/* RGBa with 0.6 opacity */
+		background: rgba(0, 0, 0, 0.6);
+		/* For IE 5.5 - 7*/
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+		/* For IE 8*/
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+		z-index:199;
+	}
+	#homepage-main-search .dropdown-menu {
+		top:135%;
+	}
+	#homepage #logo {
+		position:absolute;
+		top:35px;
+		left:35px;
+		background:url(/static/images/desktop/homepage/logo_huohuatrip.png) no-repeat;
+		z-index:299;
+		overflow:hidden;
+	}
+	#homepage #logo a {
+		display:block;
+		margin:0;
+		width:200px;
+		height:100px;
+	}
+	#homepage-playways .thumbnail {
+		border:none;
+	}
+	#homepage-playways .thumbnail h3 {
+		margin-top:0;
+		color:#7f7f7f;
+		text-align:center;
+	}
+	#homepage-playways .thumbnail p {
+		color:#FF6300;
+		font-size:24px;
+	}
+	#homepage-playways .thumbnail p small {
+		font-size:12px;
+	}
+	#homepage-members h2 {
+		margin-bottom:42px;
+	}
+	#homepage-members #homepage-thumbnails .thumbnail p {
+		color:#666;
+		font-size:24px;
+		line-height:36px;
+	}
+	#homepage-footer-links {
+		padding:38px 0 38px 68px;
+	}
+	#homepage-footer-links .media .media-heading a {
+		color:#333;
+	}
+	#homepage-footer-links ul.list-unstyled li .text-primary {
+		display:block;
+		margin:0 0 28px;
+		color:#666;
+		font-size:12px;
+	}
+	#homepage-footer-links ul.list-unstyled li a {
+		color:#FF6300;
+		font-size:12px;
+		line-height:18px;
+	}
+	#homepage .carousel-indicators {
+		left: 40px;
+		bottom:0；
+	}
+	#homepage .carousel-caption {
+		right: 0;
+		bottom: 0;
+		padding-right:40px;
+		text-align:right;
+	}
+	/* Footer */
+	/*#homepage footer ul.list-unstyled li a {
+		margin-right:34px;
+	}*/
+}
+@media (min-width:768px) and (max-width:1200px) {
+	#homepage-playways .col-md-1 {
+		width:12.5%;
+	}
+	#homepage-playways .thumbnail h3 {
+		font-size:14px;
+	}
+}
+@media (min-width:1200px) {
+	#homepage-playways .thumbnail h3 {
+		font-size:20px;
+	}
+}
+
+
+
+/* Huohua Trip - Supplier */
+/* 由Zora维护 */
+/** Supplier Contents **/
+.contents-supplier {
+	position:relative;
+/*	background: url(../images/desktop/supplier/bg2.jpg) repeat-x #ebeae6;*/
+	background: #ebeae6;
+	box-shadow: 10px;
+	box-shadow: #dcdbd8;
+	z-index:99;
+}
+.contents-supplier .supplierL {
+	margin-top: 40px;
+	float: left;
+}
+.supplierL .topbox {
+	border-radius: 3px;
+	border: 1px solid #c9c9c9;
+	background: #f7f6f1;
+	margin-bottom: 15px;
+}
+.supplierL .topbox .photo {
+	margin-top: 28px;
+}
+.supplierL .topbox .photo img {
+	-webkit-box-shadow: #9e9e9e 0px 0px 10px;
+	-moz-box-shadow: #9e9e9e 0px 0px 10px;
+	box-shadow: #9e9e9e 0px 0px 10px;
+}
+.supplierL .topbox h3 {
+	line-height: 52px;
+	font-family: "AvenirNext", 'Arial', '微软雅黑';
+}
+.supplierL .topbox .clubbox {
+	margin-left: 10%;
+}
+.topbox .clubbox li {
+	line-height: 32px;
+}
+.topbox .clubbox li span {
+	width: 25%;
+	display: inline-block;
+}
+.topbox .clubbox li strong {
+	font-size: 18px;
+	color: #666;
+	font-weight: normal;
+}
+.supplierL .topbox .btn {
+	width: 100%;
+	margin: 5% 0;
+}
+.supplierL .topbox .btn .text {
+	background: url(../images/desktop/supplier/btn_lxwm.jpg) no-repeat;
+	cursor: pointer;
+	width: 274px;
+	height: 40px;
+}
+.supplierL .centerbox {
+	border-radius: 3px;
+	border: 1px solid #c9c9c9;
+	background: #fff;
+	margin-bottom: 15px;
+}
+.supplierL .centerbox ul {
+	padding: 5% 2%;
+}
+.supplierL .centerbox li {
+	line-height: 38px;
+}
+.supplierL .centerbox li span {
+	display: inline-block;
+	font-size: 14px;
+}
+.supplierL .centerbox li span.one {
+	width: 20%;
+}
+.supplierL .centerbox li span.two {
+	width: 30%;
+	color: #666;
+}
+.supplierL .centerbox li span.three {
+	width: 25%;
+	color: #ccc;
+}
+.supplierL .bottombox {
+	border-radius: 3px;
+	border: 1px solid #c9c9c9;
+	background: #f7f6f1;
+	margin-bottom: 15px;
+	padding: 2%;
+}
+.supplierL .bottombox .samebox {
+	border-bottom: 1px solid #c9c9c9;
+	overflow: hidden;
+	padding: 2% 0 5%;
+}
+.bottombox .samebox .left {
+	width: 30%;
+	height: 100%;
+	float: left;
+	padding-top: 3%;
+}
+.bottombox .samebox .right {
+	width: 66%;
+	float: left;
+}
+.bottombox .samebox .top {
+	height: 38px;
+	line-height: 38px;
+}
+.bottombox .samebox .start {
+	width: 50%;
+	float: left;
+}
+.bottombox .samebox .date {
+	width: 50%;
+	float: left;
+}
+.samebox .date strong {
+	color: #ff7b00;
+	padding-right: 5%;
+}
+.contents-supplier .supplierR {
+	margin-top: 40px;
+	float: right;
+}
+.supplierR .club {
+	padding-bottom: 5%;
+}
+.supplierR .club h1 {
+	font-size: 30px;
+	color: #000;
+	font-weight: bold;
+	line-height: 60px;
+}
+.supplierR .club p.pad {
+	padding: 1% 0 2%;
+}
+.supplierR .subnav {
+	height: 34px;
+	margin-bottom: 22px;
+	border: 1px solid #c9c9c9;
+	border-radius: 3px;
+	background: #fafaf9;
+}
+.supplierR .subnav .left {
+	width: 44%;
+	float: left;
+	line-height: 32px;
+	padding-left: 2%;
+}
+/* 一般我们使用控制伪类a来实现按钮样式，而不是控制li，我在这里改写了你的一个样例，以后作为参考 */
+/* Modified by Goddy
+.supplierR .subnav .navL {
+	width: 56%;
+	float: left;
+}*/
+/* Modified by Goddy
+.supplierR .navL li {
+	width: 17%;
+	line-height: 32px;
+	float: left;
+	border-left: 1px solid #c9c9c9;
+	background: url(../images/desktop/supplier/arrow3.jpg) no-repeat 80% center;
+}*/
+.supplierR .navL li { 
+	padding:0;
+}
+/* Modified by Goddy
+.supplierR .navL li.tj {
+	background-color: #fff;
+	width: 15%;
+}*/
+.supplierR .navL li a.tj {
+	background-color:#fff;
+}
+/* Modified by Goddy
+.supplierR .navL li a {
+	padding-left: 25%;
+}*/
+.supplierR .navL li a {
+	display:block;
+	border-left: 1px solid #c9c9c9;
+	padding: 0 18px 0 10px;
+	line-height:32px;
+	background: url(../images/desktop/supplier/arrow3.jpg) no-repeat right 6px top 50%;
+}
+.supplierR .navL li a:hover {
+	text-decoration:none;
+/*	background-color: #f00;*/
+}
+.supplierR .navL li a.tj {
+	color: #ff7b00;
+}
+/* Modified by Goddy
+.supplierR .navL li:hover {
+	background: url(../images/desktop/supplier/arrow3.jpg) no-repeat 80% center #fff;
+}*/
+.supplierR .piclist {
+	width: 100%;
+	float: left;
+	text-align: center;
+	overflow: hidden;
+}
+.supplierR .piclist .piclft {
+	width: 50%;
+	float: left;
+	padding-top: 5%;
+}
+.supplierR .piclist .piclft .photo {
+	width: 100%;
+}
+.supplierR .piclist .trip {
+	width: 90%;
+	padding-left: 15%;
+}
+#supplier .thumbnail {
+	border:none;
+	margin-bottom: 22px;
+	background:none;
+	overflow:hidden;
+}
+#supplier .thumbnail .frame {
+	display:block;
+	margin:0 auto;
+	width:300px;
+	height:200px;
+	text-align:center;
+	white-space: nowrap;
+	overflow:hidden;
+}
+#supplier .thumbnail .frame img {
+	display: inline-block;
+	vertical-align: middle;
+}
+#supplier .thumbnail h2 {
+	margin:0;
+	padding:0;
+	width: 70%;
+	float: left;
+	line-height: 23px;
+	font-weight: normal;
+}
+#supplier .thumbnail h2 a:hover {
+	text-decoration:none;
+}
+#supplier .thumbnail h2 strong {
+	font-size: 16px;
+	display: block;
+}
+#supplier .thumbnail h2 span {
+	font-size: 12px;
+	color: #999;
+}
+#supplier .thumbnail .price {
+	width: 30%;
+	float: right;
+}
+#supplier .thumbnail .price strong {
+	display: block;
+	font-size: 22px;
+	color: #ff7b00;
+}
+#supplier .thumbnail .price span {
+	color: #666;
+}
+.supplierR .piclist .picrit {
+	width: 50%;
+	float: left;
+	padding-top: 5%;
+}
+#supplier .thumbnail .photo {
+	border: 1px solid #c9c9c9;
+	border-radius: 3px;
+	box-shadow: #ccc;
+	padding: 3%;
+	background: #fff;
+	margin-bottom: 7px;
+	margin-left: 10%;
+}
+.contents-list .bottom {
+	width: 1000px;
+	margin: 0 auto;
+}

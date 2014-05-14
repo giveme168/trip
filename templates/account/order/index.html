@@ -1,0 +1,87 @@
+{% extends 'base-v2.html' %}
+{% load url from future %}
+
+{% block content %}
+<section class="ucenter">
+  <div class="container">
+    <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <ul class="breadcrumb">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">用户中心</a></li>
+        <li><strong>我的订单</strong></li>
+      </ul>
+      <div class="page-header">
+      	<h1>我的订单</h1>
+      </div>
+      <ul class="nav nav-tabs">
+          <li> <a href="#">用户信息</a> </li>
+          <li><a href="#">修改密码</a></li>
+          <li class="active"><a href="#">我的订单</a></li>
+          <li><a href="#">管理收获地址</a></li>
+        </ul>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>订单号</th>
+              <th>订单总价</th>
+              <th>下单时间</th>
+              <th>支付总价</th>
+              <th>支付时间</th>
+              <th>订单状态</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="success">
+              <td><a href="/account/order/1000/show">964a56ae-2010122111445034</a></td>
+              <td>¥99999</td>
+              <td>2013/12/30 11:45</td>
+              <td>¥99999</td>
+              <td>2013/12/30 11:45</td>
+              <td>已付款</td>
+              <td><a href="/account/order/1000/show">订单详情</a></td>
+            </tr>
+            <tr>
+              <td><a href="/account/order/1000/show">964a56ae-2010122111445034</a></td>
+              <td>¥99999</td>
+              <td>2013/12/30 11:45</td>
+              <td>¥99999</td>
+              <td>2013/12/30 11:45</td>
+              <td>等待付款</td>
+              <td><!--<a href="#">订单详情</a>--><a href="#" class="btn btn-default btn-xs">付款</a></td>
+            </tr>
+            <tr class="warning">
+              <td><a href="/account/order/1000/show">964a56ae-2010122111445034</a></td>
+              <td>¥99999</td>
+              <td>2013/12/30 11:45</td>
+              <td>¥99999</td>
+              <td>2013/12/30 11:45</td>
+              <td>已发货</td>
+              <td><a href="/account/order/1000/show">订单详情</a></td>
+            </tr>
+            <tr class="error">
+              <td><a href="/account/order/1000/show">964a56ae-2010122111445034</a></td>
+              <td>¥99999</td>
+              <td>2013/12/30 11:45</td>
+              <td>¥99999</td>
+              <td>2013/12/30 11:45</td>
+              <td>退货中</td>
+              <td><a href="/account/order/1000/show">订单详情</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <ul class="pagination pull-right">
+          <li class="disabled"><a href="#">«</a></li>
+          <li class="active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">»</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

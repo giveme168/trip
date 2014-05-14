@@ -1,15 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'base-v2.html' %}
 {% load url from future %}
 
 {% block content %}
 <style>
-body {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #eee;
-}
+
 
 .form-signin {
+  min-height: 358px;
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
@@ -48,17 +45,17 @@ body {
 
       <form class="form-signin" method="post" action="/login/">
         {% csrf_token %}
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">登录</h2>
         <input type="hidden" value="{{path}}" name="path">
         {% if message %}
             <p>{{message}}</p>
         {% endif %}
-        <input type="text" class="form-control" placeholder="Email address" name="username" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" name="password" required>
+        <input type="text" class="form-control" placeholder="请输入邮箱" name="username" required autofocus>
+        <input type="password" class="form-control" placeholder="请输入密码" name="password" required>
         <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
+          <input type="checkbox" value="remember-me"> 记住我
         </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
       </form>
 
 </div>

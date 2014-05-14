@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>骑鹅旅行</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+<link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/huohuatrip-v2-main.css" rel="stylesheet" type="text/css" />
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="/static/js/html5shiv.min.js"></script>
+        <script src="/static/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--  header -->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-md-6"> 
+        <!--<p><a href="#"><img src="/static/images/desktop/supplier/logo3.jpg" width="135" height="50" /></a></p>-->
+        <h1 id="logo"><a href="/"><img src="/static/images/desktop/supplier/logo3.jpg"><span>火花旅行</span></a></h1>
+      </div>
+      <div class="col-xs-6 col-md-6">
+        <ul class="top-nav-func list-inline pull-right">
+          {% if current_user %}
+          欢迎：{{current_user}}
+          <li class="hidden-xs"><a href="/account/order/">个人中心</a></li>
+          <li class="hidden-xs"><a href="/account/chart/">购物车</a></li>
+          <li class="hidden-xs"><a href="/logout/">退出</a></li>
+          {% else %}
+          <li class="hidden-xs"><a href="/register/">注册</a></li>
+          <li class="hidden-xs"><a href="/login/">登录</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+{% block sidenav %}
+      
+{% endblock %}
+{% block content %}
+
+{% endblock %}
+<footer>
+  <div class="container">
+    <div class="row text-center">
+      <ul class="list-unstyled list-inline">
+        <li><a href="#">关于我们</a></li>
+        <li><a href="#">网站地图</a></li>
+        <li><a href="#">隐私条款</a></li>
+        <li><a href="#">信任与安全</a></li>
+      </ul>
+      <ul class="list-unstyled list-inline">
+        <li>京ICP备12345666-1</li>
+        <li>京公安网备20140405001</li>
+        <li>经营性网站备案1233445555</li>
+      </ul>
+      <p>&copy;火花旅行 2014</p>
+    </div>
+  </div>
+</footer>
+<script src="/static/jquery/jquery-1.10.2.min.js" language="javascript"></script> 
+<script src="/static/bootstrap/js/bootstrap.js" language="javascript"></script>
+</body>
+</html>

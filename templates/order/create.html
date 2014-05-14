@@ -1,300 +1,121 @@
-{% extends 'base.html' %}
+{% extends 'base-v2.html' %}
 {% load url from future %}
 
 {% block content %}
-<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css"/>
-<script language="javascript">
-function fEvent(sType,oInput){
-   switch (sType){
-    case "focus" :
-     oInput.isfocus = true;
-    case "mouseover" :
-     oInput.style.borderColor = '#ff8b00';
-     break;
-    case "blur" :
-     oInput.isfocus = false;
-    case "mouseout" :
-     if(!oInput.isfocus){
-      oInput.style.borderColor='#ccc';
-     }
-     break;
-   }
-}
-</script>
-<!--  banner  -->
-<div class="contents-pay">
-    <div class="conwrap">
-        <div class="conwrapL">
-            <h1>确认付款</h1>
-            <div class="city-box">
-                <p>出发城市</p>
-                <div class="city">
-                    <select name="" id="" class="checked">
-                        <option value="">北京</option>
-                     </select>
-                </div>
-            </div>
-            <div class="message">
-                <h3>联系人信息</h3>
-                <div class="linkman">
-                    <div class="left"><a href="#"><img src="{{ STATIC_URL }}images/live/user1.jpg" width="78" height="92" /></a><span>选择常用联系人</span></div>
-                    <div class="right"><a href="#"><img src="{{ STATIC_URL }}images/live/arrow2.jpg" width="13" height="7" /></a></div>
-                </div>
-                <div class="tab1">
-                    <table border="0" cellpadding="0" cellspacing="0">
-                        <tr>
-                            <td width="142" class="lft">中文 姓</td>
-                            <td width="139"><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                            <td width="142" class="lft">中文 名</td>
-                            <td width="139"><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td> 
-                        </tr>
-                        <tr>
-                            <td class="lft">拼音/英文 姓</td>
-                            <td><input name="" type="text"  onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                            <td class="lft">拼音/英文 名</td>
-                            <td><input name="" type="text"  onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                        </tr>
-                        <tr>
-                            <td class="lft">手机号</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                            <td colspan="2"><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt2 inp" /></td>
-                        </tr>
-                        <tr>
-                            <td class="lft">邮箱</td>
-                            <td colspan="3"><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt3 inp" /></td>
-                        </tr>
-                        <tr>
-                            <td class="lft"></td>
-                            <td colspan="3"><input name="" type="checkbox" value="" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt4 inp" />&nbsp;&nbsp;保存为常用联系人</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="message">
-                <h3>旅客信息</h3>
-                <div class="linkman">
-                    <div class="left"><a href="#"><img src="{{ STATIC_URL }}images/live/user1.jpg" width="78" height="92" /></a><span>第1位旅客</span></div>
-                    <div class="right"><a href="#"><img src="{{ STATIC_URL }}images/live/arrow2.jpg" width="13" height="7" /></a></div>
-                </div>
-                <div class="tab1">
-                    <table border="0" cellpadding="0" cellspacing="0">
-                        <tr>
-                            <td width="142" class="lft">中文 姓</td>
-                            <td width="139"><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                            <td width="142" class="lft">中文 名</td>
-                            <td width="139"><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp"/></td> 
-                        </tr>
-                        <tr>
-                            <td class="lft">拼音/英文 姓</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                            <td class="lft">拼音/英文 名</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                        </tr>
-                        <tr>
-                            <td class="lft">性别</td>
-                            <td>
-                                 <input type="radio" name="sex" id="male" class="sex1" />
-                                 <label for="male">男</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                                 <input type="radio" name="sex" id="female" class="sex2" />
-                                 <label for="female">女</label>
-                            </td>
-                            <td class="lft">出生日期</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" placeholder="年/月/日" /></td>
-                        </tr>
-                        <tr>
-                            <td class="lft">国籍</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                            <td class="lft">成人/儿童</td>
-                            <td>
-                                <select name="" id="" class="choose">
-                                    <option value="">请选择</option>
-                                 </select>
-                                <!--<div class="contedit zidx71 checked">
-                                    <div id="seleIndCate" class="selestyle checked"> 请选择 </div>
-                                 </div> -->
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="lft">护照</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                            <td class="lft">护照签发地点</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                        </tr>
-                        <tr>
-                            <td class="lft">护照签发日期</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" placeholder="年/月/日"  /></td>
-                            <td class="lft">护照有效期至</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" placeholder="年/月/日"  /></td>
-                        </tr>
-                        <tr>
-                            <td class="lft"></td>
-                            <td colspan="3"><input name="" type="checkbox" value="" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt4 inp" />&nbsp;&nbsp;保存为常用联系人</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="linkman">
-                    <div class="left"><a href="#"><img src="{{ STATIC_URL }}images/live/user2.jpg" width="78" height="92" /></a><span>第2位旅客</span></div>
-                    <div class="right"><a href="#"><img src="{{ STATIC_URL }}images/live/arrow2.jpg" width="13" height="7" /></a></div>
-                </div>
-                <div class="tab1">
-                    <table border="0" cellpadding="0" cellspacing="0">
-                        <tr>
-                            <td width="142" class="lft">中文 姓</td>
-                            <td width="139"><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                            <td width="142" class="lft">中文 名</td>
-                            <td width="139"><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp"/></td> 
-                        </tr>
-                        <tr>
-                            <td class="lft">拼音/英文 姓</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                            <td class="lft">拼音/英文 名</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                        </tr>
-                        <tr>
-                            <td class="lft">性别</td>
-                            <td>
-                                 <input type="radio" name="sex" id="male" class="sex1" />
-                                 <label for="male">男</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                                 <input type="radio" name="sex" id="female" class="sex2" />
-                                 <label for="female">女</label>
-                            </td>
-                            <td class="lft">出生日期</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" placeholder="年/月/日" /></td>
-                        </tr>
-                        <tr>
-                            <td class="lft">国籍</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                            <td class="lft">成人/儿童</td>
-                            <td>
-                                <select name="" id="" class="choose">
-                                    <option value="">请选择</option>
-                                 </select>
-                                <!--<div class="contedit zidx71 checked">
-                                    <div id="seleIndCate" class="selestyle checked"> 请选择 </div>
-                                 </div> -->
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="lft">护照</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                            <td class="lft">护照签发地点</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" /></td>
-                        </tr>
-                        <tr>
-                            <td class="lft">护照签发日期</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" placeholder="年/月/日"  /></td>
-                            <td class="lft">护照有效期至</td>
-                            <td><input name="" type="text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt1 inp" placeholder="年/月/日"  /></td>
-                        </tr>
-                        <tr>
-                            <td class="lft"></td>
-                            <td colspan="3"><input name="" type="checkbox" value="" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)" class="txt4 inp" />&nbsp;&nbsp;保存为常用联系人</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="message">
-                 <div class="agmt"><input name="" type="checkbox" value=""  class="txt5"/>我同意<span>退订政策</span>、<span>《服务商守则》</span>、<span>旅客退款政策</span>和<span>服务条款</span>。</div>
-                <div class="order"><a href="/order/1000/alipay"><input name="" type="button" class="btn" /></a></div>
-                <p>只有当服务商接受了您的申请，您才会被收取费用。服务商有24小时的回复时间。如果服务商拒绝了您的申请或没有回复，您
-将不会被收取任何费用。</p>
-            </div>
-            <div class="flow">本次交易流程如下图所示</div>
+<section class="ucenter">
+  <div class="container">
+    <div class="row">
+    <div class="col-xs-12">
+      <ul class="breadcrumb">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">用户中心</a></li>
+        <li><strong>确认订单</strong></li>
+      </ul>
+      <div class="page-header">
+        <h1>确认订单</h1>
+      </div>
+      <h5 class="pull-left">确认收货地址</h5>
+        <button type="button" class="btn btn-default btn-sm pull-right">管理收货地址</button>
+      </div>
+      <div class="col-xs-12 col-md-12">
+        <div class="alert alert-warning">
+          <label class="radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+            上海 上海市 卢湾区 南昌路195号三楼A (Goddy 收) 13800138000 <a href="#updateAddress" class="btn btn-default btn-xs pull-right" data-toggle="modal">修改此地址</a></label>
+           </div>
+        <div class="alert alert-info">
+          <label class="radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            <small>上海 上海市 静安区 昌化路282号（近康定路） (Emma 收) 13800138000</small></label>
         </div>
-        <div class="wonwrapR">
-            <div class="ad"><a href="#"><img src="{{ STATIC_URL }}images/live/pic_4.jpg" width="314" height="208" /></a></div>
-            <div class="tab2">
-                <h2>马尔代夫休闲5日</h2>
-                <div class="title">2人成行2014年7月16日出发</div>
-                <table cellpadding="0" cellspacing="0" border="0">
-                    <tr>
-                        <td width="138px">退订政策</td>
-                        <td width="138px"><span>严格</span></td>
-                    </tr>
-                    <tr>
-                        <td>天</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>晚</td>
-                        <td>3</td>
-                    </tr>
-                </table>
-                <table cellpadding="0" cellspacing="0" border="0">
-                    <tr>
-                        <td width="138px">小计</td>
-                        <td width="138px">1599</td>
-                    </tr>
-                    <tr>
-                        <td>保险费</td>
-                        <td>100</td>
-                    </tr>
-                    <tr>
-                        <td>优惠券代码</td>
-                        <td>3</td>
-                    </tr>
-                </table>
-                <table cellpadding="0" cellspacing="0" border="0" style="border-bottom:0;">
-                    <tr>
-                        <td width="138px" style="font-size:18px;">总计</td>
-                        <td width="138px"><strong>¥1699</strong></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-    <!--  footer -->
-    <section style="background:#333;">
-      <div class="container" id="chrs-homepage-links">
-        <div class="row">
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <div class="media"> <a class="pull-left" href="#"> <img class="media-object" src="{{ STATIC_URL }}images/live/flag_uk.png" alt="Cheeers in English"> </a>
-              <div class="media-body">
-                <h4 class="media-heading"><a href="#">Cheeers in English</a></h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 hidden-xs">
-            <ul class="list-unstyled">
-              <li><span class="text-primary">发现</span></li>
-              <li><a href="/safe/">信任与安全</a></li>
-              <li><a href="#">邀请好友</a></li>
-              <li><a href="#">Cheeers灵感</a></li>
-              <li><a href="#">Cheeers骑士</a></li>
-              <li><a href="#">移动版</a></li>
-              <li><a href="#">为什么要旅行？</a></li>
-              <li><a href="#">做个文明的旅行家</a></li>
-              <li><a href="#">网站地图</a></li>
-            </ul>
-          </div>
-          <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 hidden-xs">
-            <ul class="list-unstyled">
-              <li><span class="text-primary">公司信息</span></li>
-              <li><a href="#">关于</a></li>
-              <li><a href="#">招贤纳士</a></li>
-              <li><a href="#">新闻</a></li>
-              <li><a href="#">博客</a></li>
-              <li><a href="#">帮助</a></li>
-              <li><a href="#">政策</a></li>
-              <li><a href="#">供应商义务</a></li>
-              <li><a href="#">条款与隐私</a></li>
-            </ul>
-          </div>
-          <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 hidden-xs">
-            <ul class="list-unstyled">
-              <li><span class="text-primary">关注</span></li>
-              <li><a href="#">微信</a></li>
-              <li><a href="#">新浪微博</a></li>
-              <li><a href="#">Flickr</a></li>
-              <li><a href="#">Google+</a></li>
-              <li>
-                <p>&nbsp;</p>
-              </li>
-              <li><img src="{{ STATIC_URL }}images/live/slogan.png" alt="预订你的旅行灵感"></li>
-            </ul>
-          </div>
+        <div class="alert alert-info">
+          <label class="radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            <small>北京 北京市 朝阳区 砖角楼南里22号楼1504室 (Goddy 收) 13800138000</small></label>
         </div>
       </div>
-    </section>
+      <div class="col-xs-12 col-md-12">
+        <table class="order-details-items table table-striped" id="cart-list">
+          <thead>
+            <tr>
+              <th>商品</th>
+              <th>商品属性</th>
+              <th>单价（元）</th>
+              <th>数量</th>
+              <th>优惠</th>
+              <th>商品总价（元）</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="order-item">
+              <td><a href="#" class="order-item-thumb"><img src="/static/images/assets/pic_1.jpg" class="item-thumb"></a>
+                <div class="order-item-desc"><a href="#">Jcrew/j crew 欧美男裝 纯棉短袖原单POLO BROKEN-IN POCKE</a></div></td>
+              <td><span>颜色: 浅蓝色</span><span>尺码: 170/90(M)</span></td>
+              <td>9999.00</td>
+              <td><span class="cart-quantity-input">
+                <input value="1" numlimit="999" numlowest="1">
+                </span></td>
+              <td>八折</td>
+              <td><span class="text-error">9999999</span></td>
+              <td><button class="btn btn-default btn-xs" type="button">删除</button>
+                <button class="btn btn-default btn-xs" type="button">移入收藏夹</button></td>
+            </tr>
+            <tr class="order-item">
+              <td><a href="#" class="order-item-thumb"><img src="/static/images/assets/pic_2.jpg"  class="item-thumb"></a>
+                <div class="order-item-desc"><a href="#">Jcrew/j crew 欧美男裝 纯棉短袖原单POLO BROKEN-IN POCKE</a></div></td>
+              <td><span>颜色: 浅蓝色</span><span>尺码: 170/90(M)</span></td>
+              <td>9999.00</td>
+              <td><span class="cart-quantity-input">
+                <input value="1" numlimit="999" numlowest="1">
+                </span></td>
+              <td>八折</td>
+              <td><span class="text-error">9999999</span></td>
+              <td><button class="btn btn-default btn-xs" type="button">删除</button>
+                <button class="btn btn-default btn-xs" type="button">移入收藏夹</button></td>
+            </tr>
+            <tr class="order-item">
+              <td><a href="#" class="order-item-thumb"><img src="/static/images/assets/pic_3.jpg" class="item-thumb"></a>
+                <div class="order-item-desc"><a href="#">Jcrew/j crew 欧美男裝 纯棉短袖原单POLO BROKEN-IN POCKE</a></div></td>
+              <td><span>颜色: 浅蓝色</span><span>尺码: 170/90(M)</span></td>
+              <td>9999.00</td>
+              <td><span class="cart-quantity-input">
+                <input value="1" numlimit="999" numlowest="1">
+                </span></td>
+              <td>八折</td>
+              <td><span class="text-error">9999999</span></td>
+              <td><button class="btn btn-default btn-xs" type="button">删除</button>
+                <button class="btn btn-default btn-xs" type="button">移入收藏夹</button></td>
+            </tr>
+            <tr class="order-item">
+              <td><a href="#" class="order-item-thumb"><img src="/static/images/assets/pic_4.jpg" class="item-thumb"></a>
+                <div class="order-item-desc"><a href="#">Jcrew/j crew 欧美男裝 纯棉短袖原单POLO BROKEN-IN POCKE</a></div></td>
+              <td><span>颜色: 浅蓝色</span><span>尺码: 170/90(M)</span></td>
+              <td>9999.00</td>
+              <td><span class="cart-quantity-input">
+                <input value="1" numlimit="999" numlowest="1">
+                </span></td>
+              <td>八折</td>
+              <td><span class="text-error">9999999</span></td>
+              <td><button class="btn btn-default btn-xs" type="button">删除</button>
+                <button class="btn btn-default btn-xs" type="button">移入收藏夹</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="col-xs-12 col-md-6">
+          <h5>备注留言</h5>
+          <textarea class="form-control" rows="3"></textarea>
+        </div>
+        <ul class="list-unstyled pull-right">
+          <li class="clearfix"><span class="pull-left">商品总价：</span><span class="pull-right">¥9999.99</span></li>
+          <li class="clearfix"><span class="pull-left">促销优惠：</span><span class="pull-right">-¥45.00</span></li>
+          <li>
+            <div class="cart-price-all"><strong class="lead pull-left">实付款：</strong><strong class="lead text-danger pull-right">¥665.00</strong></div>
+          </li>
+          <li><a href="/order/1000/alipay" class="btn btn-primary pull-right">结　算</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}

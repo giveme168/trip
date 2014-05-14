@@ -31,6 +31,8 @@ def current_user(request):
         print e
         is_super = False
     return {'current_user': request.user,'is_super':is_super,'user_id':user.id,'power':power}'''
+    if not user.username:
+        user = None
     return {'current_user':user}
 
 def is_super_permission(redirect_url='error.html', login_url='/'):
