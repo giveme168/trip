@@ -1,8 +1,10 @@
 *.pyc
-.svn
 *.sql
 *.tar.gz
-.DS_Store
-*.pyc
-.coverage
+*.swp
+.svn
 *.db
+.DS_Store
+.coverage
+*.jpg
+*.png
