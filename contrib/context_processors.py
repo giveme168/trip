@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django.shortcuts import render_to_response
 from django.shortcuts import render
 
+from apps.account.models.auth_info import Info
 
 def current_user(request):
     user = request.user
@@ -33,7 +34,13 @@ def current_user(request):
     return {'current_user': request.user,'is_super':is_super,'user_id':user.id,'power':power}'''
     if not user.username:
         user = None
-    return {'current_user':user}
+        user_info = None
+    else:
+        try:
+            user_info = Info.objects.get(user=user)
+        except:
+            pass
+    return {'current_user':user,'user_info':user_info}
 
 def is_super_permission(redirect_url='error.html', login_url='/'):
     def wrapper(f):

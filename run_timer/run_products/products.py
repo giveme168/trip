@@ -56,7 +56,7 @@ PRODUCTS = [
         'lunch':u'午餐在酒店享受挪威特色简餐',
         'dinner':u'晚上特别安排帐篷篝火晚餐，享受和萨迷族人风味的晚餐稍候入住酒店休息',
         'project':u'下午安排体验贵族娱乐雪橇犬拉雪橇车，在北极大部分拉雪橇的都是纯种西伯利亚哈士奇、阿拉斯加雪橇犬等，体验专业的雪橇犬团队在雪地上的激情和动力！',
-        'pics':u'12e0ae1942dd49e1b4c2d918e8e8709c.png|17c95337fc624da49b0974d765bb4089.png|7da81f26abe8462ab1ae2beb0f443fca.png',
+        'pics':u'12e0ae1942dd49e1b4c2d918e8e8709c.png|17c95337fc624da49b0974d765bb4089.png',
     	}
     ],
     'body':{
@@ -84,6 +84,7 @@ def run():
     for product in PRODUCTS:
         #导入产品详情
         pro = Products()
+        pro.name = product['name']
         pro.price_type = product['price_type']
         pro.price_by_one = product['price_by_one']
         pro.total_price_by_one = product['total_price_by_one']
@@ -109,11 +110,13 @@ def run():
         pro.end_country = product['end_country']
         pro.end_city = product['end_city']
         pro.language = product['language']
+        pro.tags = product['tags']
         pro.pics = product['pics']
         pro.trips = json.dumps(product['trips'])
         pro.date_count = product['date_count']
         pro.user = User.objects.get(id=1)
         pro.body = json.dumps(product['body'])
+        pro.status = 2
         pro.save()
         #导入增值服务
         for service in product['add_service']:

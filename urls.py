@@ -21,10 +21,13 @@ urlpatterns = patterns('',
     (r'^common/', include('apps.common.urls', namespace='common', app_name='common')),
     (r'^order/', include('apps.order.urls', namespace='order', app_name='order')),
     (r'^ink/', include('apps.ink.urls', namespace='ink', app_name='ink')),
+    (r'^administrator/', include('apps.administrator.urls', namespace='administrator', app_name='administrator')),
+
     (r'^$', 'django.contrib.auth.views.login', {'template_name':'index.html'}),
     (r'^safe/$','apps.common.views.common.about_safe'),
     (r'^index$','apps.common.views.common.index'),
     (r'^login/$', 'apps.account.views.auth.login'),
+
     (r'^register/$', 'apps.account.views.auth.register'),
     (r'^logout/$', 'django.contrib.auth.views.logout', {'template_name':'index.html'}),
     (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': MEDIA_ROOT }),

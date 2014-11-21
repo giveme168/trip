@@ -1,0 +1,14 @@
+[{
+    "pk": 1,
+    "model": "auth.info",
+    "fields":
+        {
+            "user":1,
+            "name": "compass",
+            "ID_type":3,
+            "cellphone":"18601113045",
+            "description":"超级管理员",
+            "body":""
+        }
+    }
+]

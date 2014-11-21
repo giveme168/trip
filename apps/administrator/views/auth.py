@@ -13,26 +13,30 @@ from annoying.decorators import render_to,ajax_request
 import simplejson as json 
 
 from contrib.shortcuts import json_response
-from apps.common.models.city import City
 from apps.account.models.auth_info import Info
 from settings import LOGIN_REDIRECT_URL
 
-@render_to('account/auth/login.html')
+@render_to('administrator/login.html')
 def login(request):
-    path = request.REQUEST.get('path','')
     message = ''
-    if path:
-        message = u'请您登录'   
     if request.method == 'POST':
         user = auth.authenticate(username=request.POST['username'], password=request.POST['password'])
         if user is not None :
+            info = Info.objects.get(user=user)
+            if info.ID_type != 3:
+                return {'message':u'对不起，您不能登录该系统'}
             auth.login(request, user)
-            if path:
-            	return HttpResponseRedirect(path)
-            return HttpResponseRedirect(LOGIN_REDIRECT_URL)
+            return HttpResponseRedirect('/administrator/index')
         else:
             return {'message':u'用户名或密码不正确'}
-    return {'path':path,'message':message}
+    if request.user.username:
+        auth.logout(request)
+    return {}
+
+@render_to('administrator/index.html')
+def index(request):
+
+    return {}
 
 @render_to('account/auth/register.html')
 def register(request):

@@ -1,4 +1,4 @@
-{% extends 'base-v2.html' %}
+{% extends 'administrator/base.html' %}
 {% load url from future %}
 
 {% block content %}
@@ -42,23 +42,21 @@
 }
 </style>
 <div class="container">
-
-      <form class="form-signin" method="post" action="/register/">
-        {% csrf_token %}
-        <h2 class="form-signin-heading">注册</h2>
-        <input type="hidden" value="{{path}}" name="path">
+    <div class="page-header">
+        <h1>火花旅游后台管理系统</h1>
+        <p class="lead">非后台客服人员禁止登录，请严格遵守公司规定.</p>
+    </div>
+    <form class="form-signin" role="form" action='' method='post'>
+    	{% csrf_token %}
+        <h2 class="form-signin-heading">Please sign in</h2>
         {% if message %}
             <p>{{message}}</p>
         {% endif %}
-        <input type="text" class="form-control" placeholder="昵称" name="username" required autofocus>
-        <input type="text" class="form-control" placeholder="请输入邮箱" name="email" required autofocus>
-        <input type="text" class="form-control" placeholder="请输入手机号" name="cellphone" required autofocus>
-        <input type="password" class="form-control" placeholder="请输入密码" name="password" required autofocus>
-        <input type="password" class="form-control" placeholder="请输入确认密码" name="check_password" required autofocus>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
-      </form>
-
+        <input type="text" class="form-control" placeholder="Email address" name="username" required autofocus>
+        <input type="password" class="form-control" placeholder="Password" name="password" required>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
 </div>
-
 {% endblock %}
 

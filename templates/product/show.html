@@ -95,7 +95,7 @@ function getMousePoint(ev,type) {
         <div class="qe-container">
             <div class="trow main-title">
                 <div class="tspan8">
-                    <h1>马尔代夫休闲5日</h1>
+                    <h1>{{product.name}}</h1>
                 </div>
                 <div class="tspan4">
                     <div class="add-plan-outer pull-left">
@@ -115,18 +115,11 @@ function getMousePoint(ev,type) {
                 <div class="tspan8">
                     <div class="piclist clearfix">
                         <ul id="bigpics">
-                            <li><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
-                            <li style="display:none"><a href=""><img src="//static/images/live/live/big_thums.jpg"></a></li>
-                            <li style="display:none"><a href=""><img src="//static/images/live/live//big_thums.jpg"></a></li>
-                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
-                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
-                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
-                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
-                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
-                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
-                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
-                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
-                            <li style="display:none"><a href=""><img src="/static/images/live/big_thums.jpg"></a></li>
+                            {% for k in product.pics %}
+                                <li>
+                                    <img src="{{ STATIC_URL }}images/product/{{k}}" width="650" height="600">
+                                </li>
+                            {% endfor %}
                         </ul>
                         <div class="cls"></div>
                         <div class="smallpics">
@@ -135,18 +128,19 @@ function getMousePoint(ev,type) {
                                 <li class="next"><a href="javascript:void(0);" class="pro-info-bth btn-next"></a></li>
                             </ul>
                             <ul id="cnpictab" class="pictab clearfix" style="margin-left: 34px;margin-top: -67px;">
-                                <li id="cnpictab0" class="active" data-num="0"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
-                                <li id="cnpictab1" data-num="1"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
-                                <li id="cnpictab2" data-num="2"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
-                                <li id="cnpictab3" data-num="3"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
-                                <li id="cnpictab4" data-num="4"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
-                                <li id="cnpictab5" data-num="5"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
-                                <li id="cnpictab6" data-num="6"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
-                                <li id="cnpictab7" data-num="7"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
-                                <li id="cnpictab8" data-num="8"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
-                                <li id="cnpictab9" data-num="9"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
-                                <li id="cnpictab10" data-num="10"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
-                                <li id="cnpictab11" data-num="11"><img src="/static/images/live/small_thums.jpg" width="60" height="60"></li>
+                                {% for k in product.pics %}
+                                    {% if forloop.counter0 == 0 %}
+                                    <li id="cnpictab{{forloop.counter0}}" class="active" data-num="{{forloop.counter0}}">
+                                        <img src="{{ STATIC_URL }}images/product/{{k}}" width="60" height="60">
+                                    </li>
+                                    {% else %}
+                                    <li id="cnpictab{{forloop.counter0}}"  data-num="{{forloop.counter0}}">
+                                        <img src="{{ STATIC_URL }}images/product/{{k}}" width="60" height="60">
+                                    </li>
+                                    {% endif %}
+                                {% endfor %}
+                                
+                                
                             </ul>
                         </div>
                     </div>
@@ -155,55 +149,33 @@ function getMousePoint(ev,type) {
                             <ul class="line-nav line-nav-tabs clearfix">
                                 <li class="first active"><a href="javascript:void(0);" data-toggle="0">详情</a></li>
                                 <li><a href="javascript:void(0);" data-toggle="1">地图</a></li>
-                                <li><a href="javascript:void(0);" data-toggle="2">72个评论</a></li>
+                                <li><a href="javascript:void(0);" data-toggle="2">{{reviews_count}}个评论</a></li>
                                 <li><a href="javascript:void(0);" data-toggle="3">也在其他15个旅行计划中</a></li>
                             </ul>
                             <ul class="line-left-nav line-left-nav-tabs clearfix">
                                 <li class="active first"><a href="javascript:void(0);" class="pro-info-icon line-details png_bg" data-toggle="0"></a></li>
-                                <li class=""><a href="javascript:void(0);" data-toggle="1">D1</a></li>
-                                <li><a href="javascript:void(0);" data-toggle="2">D2</a></li>
-                                <li><a href="javascript:void(0);" data-toggle="3">D3</a></li>
-                                <li><a href="javascript:void(0);" data-toggle="4">D4</a></li>
-                                <li><a href="javascript:void(0);" data-toggle="5">D5</a></li>
+                                {% for k in product.trips %}
+                                <li><a href="javascript:void(0);" data-toggle="{{forloop.counter}}">D{{forloop.counter}}</a></li>
+                                {% endfor %}
                             </ul>
                             <div class="line-tab-content">
                                 <div class="tab-pane active" id="tab0">
                                     <div class="trow pd30 ie7-no-padd">
-                                        <div class="tspan6">
-                                            <h3>行程安排</h3>
-                                            <div class="details_d" id="desc_d1">
-                                                <img src="/static/images/live/desc_d1.jpg">
-                                                <div class="line-text">第一天：洛杉矶(Los Angeles)</div>
-                                            </div>
-                                            <div class="details_d" id="desc_d2">
-                                                <img src="/static/images/live/desc_d2.jpg">
-                                                <div class="line-text">第二天：迪斯尼乐园(Disneyland)</div>
-                                            </div>
-                                            <div class="details_d" id="desc_d3">
-                                                <div class="line-text">第三天：拉斯维加斯(Las Vegas)</div>
-                                            </div>
-                                            <div class="details_d" id="desc_d4">
-                                                <div class="line-text">第四天：胡佛水坝(Hoover Dam)</div>
-                                            </div>
-                                            <div class="details_d" id="desc_d5">
-                                                <img src="/static/images/live/desc_d5.jpg">
-                                                <div class="line-text">第五天：硅谷(Silicon Valley)</div>
-                                            </div>
-                                        </div>
-                                        <div class="tspan5">
+                                        
+                                        <div class="tspan7" style="margin-left: 30px;">
                                             <ul class="line-arrange">
                                                 <li>
                                                     <i class="pro-info-icon icon-alarm-clock png_bg"></i>
-                                                    <label>历时</label>5天
+                                                    <label>历时</label>{{product.date_count}}天
                                                 </li>
-                                                <li><i class="pro-info-icon icon-open-day png_bg"></i><label>开放日</label>周一至周五</li>
-                                                <li><i class="pro-info-icon icon-user-group png_bg"></i><label>最少人数</label>1人</li>
-                                                <li><i class="pro-info-icon icon-user-group png_bg"></i><label>最多人数</label>12人</li>
+                                                <li><i class="pro-info-icon icon-open-day png_bg"></i><label>旅行时间</label>{{product.trip_start_time|date:"Y-m-d"}}至{{product.trip_end_time|date:"Y-m-d"}}</li>
+                                                <li><i class="pro-info-icon icon-open-day png_bg"></i><label>截止时间</label>{{product.order_time|date:"Y-m-d"}}</li>
+                                                <li><i class="pro-info-icon icon-user-group png_bg"></i><label>服务语言</label>{{product.language}}</li>
                                                 <li><i class="pro-info-icon icon-open-day png_bg"></i><label>预定</label>至少提前2周</li>
                                                 <li><i class="pro-info-icon icon-open-day png_bg"></i><label>取消</label>至少提前4周</li>
                                             </ul>
                                             <div class="line-feature">
-                                                <span>行程特色</span>洛杉矶、旧金山、拉斯维加斯三大国际性都市，胡佛水坝、大峡谷两大世界奇景，风情小镇圣塔芭芭拉和丹麦村，海滨圣地亚哥，世界名校斯坦福大学，还有加州风景最美的优胜美地国家公园，购物狂的天堂名牌工厂直销中心，吃货的福音巧克力工厂，还有圣地亚哥、棕榈泉任你选，这趟旅行真是物超所值！
+                                                <span>行程特色</span><br/>{{product.key_desc|safe}}
                                             </div>
                                         </div>
                                     </div>
@@ -233,7 +205,7 @@ function getMousePoint(ev,type) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="left_tab2">
+                                <!--<div class="tab-pane" id="left_tab2">
                                     <div id="day2" class="line-day pd30">
                                         <div class="day-title mb20">
                                             <span class="trip-mode">洛杉矶(Los Angeles)<i class="pro-info-icon trip-mode-car png_bg"></i></span>
@@ -332,7 +304,7 @@ function getMousePoint(ev,type) {
                                             </p>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                                 <div class="tab-pane" id="top_tab1">
                                     <div class="line-map ie7-padd">
                                         <img src="/static/images/live/map.jpg" width="560" height="560">
@@ -340,126 +312,20 @@ function getMousePoint(ev,type) {
                                 </div>
                                 <div class="tab-pane" id="top_tab2">
                                     <div id="reviewlistbox" class="line-review pd30">
-                                        <div class="one-review first">
+                                        {% for k in reviews %}
+                                        <div class="one-review">
                                             <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
                                             <div class="review-right">
                                                 <div class="rate-user-info">
                                                     <i class="pro-info-icon star star4 png_bg"></i>
-                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
+                                                    <span class="user">{{reviews.user.username}}</span>&nbsp;<span class="datetime">{{reviews.create_time|date:"Y-m-d H:i:s"}}</span>
                                                 </div>
                                                 <div class="comment-content">
-                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
+                                                    {{reviews.content}}
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="one-review">
-                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
-                                            <div class="review-right">
-                                                <div class="rate-user-info">
-                                                    <i class="pro-info-icon star star3 png_bg"></i>
-                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
-                                                </div>
-                                                <div class="comment-content">
-                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="one-review">
-                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
-                                            <div class="review-right">
-                                                <div class="rate-user-info">
-                                                    <i class="pro-info-icon star star2 png_bg"></i>
-                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
-                                                </div>
-                                                <div class="comment-content">
-                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="one-review">
-                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
-                                            <div class="review-right">
-                                                <div class="rate-user-info">
-                                                    <i class="pro-info-icon star star1 png_bg"></i>
-                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
-                                                </div>
-                                                <div class="comment-content">
-                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="one-review">
-                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
-                                            <div class="review-right">
-                                                <div class="rate-user-info">
-                                                    <i class="pro-info-icon star star5 png_bg"></i>
-                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
-                                                </div>
-                                                <div class="comment-content">
-                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="one-review">
-                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
-                                            <div class="review-right">
-                                                <div class="rate-user-info">
-                                                    <i class="pro-info-icon star star3 png_bg"></i>
-                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
-                                                </div>
-                                                <div class="comment-content">
-                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="one-review">
-                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
-                                            <div class="review-right">
-                                                <div class="rate-user-info">
-                                                    <i class="pro-info-icon star star2 png_bg"></i>
-                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
-                                                </div>
-                                                <div class="comment-content">
-                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="one-review">
-                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
-                                            <div class="review-right">
-                                                <div class="rate-user-info">
-                                                    <i class="pro-info-icon star star1 png_bg"></i>
-                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
-                                                </div>
-                                                <div class="comment-content">
-                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="one-review">
-                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
-                                            <div class="review-right">
-                                                <div class="rate-user-info">
-                                                    <i class="pro-info-icon star star5 png_bg"></i>
-                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
-                                                </div>
-                                                <div class="comment-content">
-                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="one-review last">
-                                            <div class="pull-left"><img class="png_bg" src="/static/images/live/review.png" width="74" height="73"></div>
-                                            <div class="review-right">
-                                                <div class="rate-user-info">
-                                                    <i class="pro-info-icon star star2 png_bg"></i>
-                                                    <span class="user">redlinex</span>&nbsp;<span class="datetime">3/26/2014</span>
-                                                </div>
-                                                <div class="comment-content">
-                                                    儿时每次听到飞机的声音都会不自觉的望向窗子，直到飞机飞出视线，还要听着越来越远的声音想象它飞向了哪里。那时之所以如此留意，可能是那个渐去声音代表了远方。现在长大，每每听到飞机声，虽不再望向天空，但却会心头一紧，因为这次渐远的声音，代表了家乡。
-                                                </div>
-                                            </div>
-                                        </div>
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
@@ -469,7 +335,7 @@ function getMousePoint(ev,type) {
                 <div class="tspan4">
                     <div class="white-panel qe-panel">
                         <div class="clearfix">
-                            <span class="trip-price pull-left">¥15990</span>
+                            <span class="trip-price pull-left">¥{{product.price_by_one}}</span>
                             <div class="pull-right">价格最<br/>优保证</div>
                             <a href="#" class="pro-info-icon btn-ensure mr5 png_bg pull-right"></a>
                         </div>
@@ -479,15 +345,15 @@ function getMousePoint(ev,type) {
                         <div class="cls"></div>
                     </div>
                     <div class="light-panel qe-panel suppliers mt15">
-                        <a href="/supplier/1000/index/" class="supplier-frame">
-                            <img src="/static/images/live/supplier.jpg" width="230" height="230" alt="供应商图像">
+                        <a href="/supplier/{{supplier.user.id}}/index/" class="supplier-frame">
+                            <img src="{{STATIC_URL}}images/supplier/{{supplier.body.pics}}" width="230" height="230" alt="供应商图像">
                         </a>
-                        <h4>Compass Travel Club</h4>
+                        <h4>{{supplier.name}}</h4>
                         <h5>供应商的更多产品<i class="left-icon"></i></h5>
                         <p><label>好评率</label>97%</p>
                         <p><label>回复时间</label>12个小时</p>
-                        <p><label>使用语言</label>汉语、英语</p>
-                        <a href="/supplier/1000/index/" class="pro-info-bth btn-contact mt30"></a>
+                        <p><label>使用语言</label>{{supplier.body.language}}</p>
+                        <a href="/supplier/{{supplier.user.id}}/index/" class="pro-info-bth btn-contact mt30"></a>
                     </div>
                     <div class="dark-panel qe-panel mt15 safe">
                         <h5>Cheeers是如何保障你的出行的？</h5>
@@ -582,12 +448,12 @@ function getMousePoint(ev,type) {
             $(this).addClass("active");
             $(this).siblings().removeClass("active");
         });
-        t = setInterval("showAuto()", 7000);
+        t = setInterval("showAuto()", 11000);
         $(".piclist").hover(function() {
             clearInterval(t);
         },
         function() {
-            t = setInterval("showAuto()", 5000);
+            t = setInterval("showAuto()", 10000);
         });
         prev.click(function(){
             n--;

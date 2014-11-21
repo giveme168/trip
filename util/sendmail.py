@@ -7,7 +7,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text  import MIMEText
 
 class CCSendMail:
-    def __init__(self,host="smtp.qq.com",username='839783834@qq.com',password='guo2919802'):
+    def __init__(self,host="smtp.exmail.qq.com",username='hr@huohuatrip.com',password='hr@123'):
         self.__smtp=smtplib.SMTP(host)
         self.__subject=None
         self.__content=None
@@ -17,8 +17,8 @@ class CCSendMail:
         self.__charset='gb2312'
         self.username = username
         self.password = password
-        self.fromAlias='Igame'
-        self.from2='Igame@chinacache.com'
+        self.fromAlias=u'火花旅游'
+        self.from2='service@huohuatrip.com'
         
     def close(self):
         try:
@@ -109,7 +109,7 @@ class CCSendMail:
 
 def main():
     send=CCSendMail()    
-    send.sendMoreHtml(['yu.guo@chinacache.com'],u'CCDH测试',u'测试测试测试是测试')
+    send.sendMoreHtml(['guoyu@huohuatrip.com','wxd@huohuatrip.com'],u'火花旅游测试',u'火花旅游测试，service@huohuatrip.com密码不正确')
     #send.sendMoreHtml(['shengli.zhang@webluker.com','lihai.zhang@webluker.com','lebing.zhou@webluker.com'],u'邮件测试',u'测试，谢谢')
     
 if __name__=='__main__':

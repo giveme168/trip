@@ -1,5 +1,5 @@
 {% load extras_tags %}
-<div class="pagination">
+<!--<div class="pagination">
     <ul>
         {% if pages.has_previous %}
         <li class="previous"><a href="?page={{ pages.previous_page_number }}{{param}}"><img src="{{STATIC_URL}}images/pager/previous.png"></a></li>
@@ -30,26 +30,49 @@
     <b class="pull-right">共<span class="totalCount">{{page_count}}</span>条</b>
 </div>
 
-<!-- <div class="pagination">    
-            <ul>
-                <li class="previous"><a href="#"><img src="{{STATIC_URL}}images/pager/previous.png"></a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">...</a></li>
-                <li><a href="#">6</a></li>
-                <li><a href="#">7</a></li>
-                <li><a href="#">8</a></li>
-                <li><a href="#">9</a></li>
-                <li class="next"><a href="#"><img src="{{STATIC_URL}}images/pager/next.png"></a></li>
-            </ul>
-        
-    </div> -->
+-->
+<div class="bottom">
+        <div class="page">
+            <div class="pagination">
+            {% if pages.has_previous %}
+            <a class="next-page" href="?page={{ pages.previous_page_number }}{{param}}">上一页<i></i></a>
+            {% else %}
+            <a class="next-page" href="#">上一页<i></i></a>
+            {% endif %}
+
+            {% if 1 not in pages|page_recipe %}
+            <span class="current"><a href="?page=1{{param}}">1</a></span>
+            <li><a href="#">...</a></li>
+            {% endif %}
+
+            {% for number in pages|page_recipe %}
+            <a id="page{{number}}" href="?page={{ number }}{{param}}">{{ number }}</a>
+            <!--<li id="page{{number}}"><a href="?page={{ number }}{{param}}">{{ number }}</a></li>-->
+            {% endfor %}
+
+            {% if pages.paginator.num_pages not in pages|page_recipe %}
+            <span class="more">...</span>
+            <a href="?page={{ pages.paginator.num_pages }}{{param}}">{{ pages.paginator.num_pages }}</a>
+
+            {% endif %}
+
+           
+
+            {% if pages.has_next %}
+            <a class="next-page" href="?page={{ pages.next_page_number }}{{param}}">下一页<i></i></a>
+            {% else %}
+            <a class="next-page" href="#">下一页<i></i></a>
+            {% endif %}
+            
+            </div>
+        </div>
+    </div>
+
+
 
 <script>
     $(document).ready(function(){
-        $("#page" + {{ pages.number}}).addClass("active");
+        $("#page" + {{ pages.number}}).addClass("current");
     });
 </script>
 

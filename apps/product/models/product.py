@@ -45,13 +45,16 @@ class Products(models.Model):
     end_city = models.CharField(u'目的城市', max_length=254,help_text=u'目的城市', db_index=True)
     language = models.CharField(u'服务语言',max_length=254,help_text=u'服务语言',db_index=True)
     pics = models.CharField(u'首图片', max_length=254, help_text=u"首图片")
+    tags = models.CharField(u'标签', max_length=254, help_text=u"标签")
     trips = models.TextField(u'旅途安排')
     date_count = models.IntegerField(u'旅程天数', max_length=2, help_text=u'旅程天数',db_index=True)
     user = models.ForeignKey(User)
     status = models.IntegerField(u'状态', choices=STATUS, help_text=u'状态', default=1,db_index=True)
     create_time = models.DateTimeField(u'创建时间', auto_now_add=True, default=datetime.datetime.now(), help_text='创建时间',db_index=True)
     body = models.TextField(u'其他说明')
-
+    reviews = models.IntegerField(u'评论数',default=1,max_length=10,db_index=True,help_text=u'评论数')
+    sales = models.IntegerField(u'成单数',default=1,max_length=10,db_index=True,help_text=u'成单数')
+    star = models.IntegerField(u'星评',default=1,max_length=1,help_text=u'星评',db_index=True)
     class Meta:
         app_label = 'product' 
         ordering = ['-create_time']

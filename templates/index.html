@@ -25,7 +25,7 @@
         <ul class="list-inline list-unstyled" id="top-nav">
           <!--<li class="hidden-xs"><a href="#">旅行灵感</a></li>-->
           {% if current_user %}
-          欢迎：{{current_user}}
+          欢迎：{{user_info.name}}
           <li class="hidden-xs"><a href="/account/order/">个人中心</a></li>
           <li class="hidden-xs"><a href="/account/chart/">购物车</a></li>
           <li class="hidden-xs"><a href="/logout/">退出</a></li>

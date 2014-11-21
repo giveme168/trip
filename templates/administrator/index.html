@@ -1,0 +1,30 @@
+{% extends 'administrator/base.html' %}
+{% load url from future %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-md-2">
+        {% include "administrator/sidebar.html" %}
+    </div>
+    <div class="col-md-10">
+      <div class="page-header">
+        <h1>欢迎光临!</h1>
+      </div>
+
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <th>姓名</th>
+            <th>{{ current_user.username }}</th>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <th>{{ current_user.email }}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

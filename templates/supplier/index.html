@@ -8,13 +8,13 @@
     <div class="row">
       <div class="col-xs-12 col-md-4 supplierL">
         <div class="col-xs-12 col-md-12 topbox">
-          <div class="photo text-center"><a href="#"><img src="/static/images/desktop/supplier/photo_1.jpg" width="250" height="253"></a></div>
-          <h3 class="text-center">Compass Travel Club</h3>
+          <div class="photo text-center"><a><img src="{{STATIC_URL}}images/supplier/{{supplier.body.pics}}" width="250" height="253"></a></div>
+          <h3 class="text-center">{{supplier.name}}</h3>
           <div class="clubbox">
             <ul>
               <li><span>好评率</span><strong>97%</strong></li>
               <li><span>回复时间</span><strong>12个小时</strong></li>
-              <li><span>使用语言</span><strong>汉语、英语</strong></li>
+              <li><span>使用语言</span><strong>{{supplier.body.language}}</strong></li>
             </ul>
           </div>
           <div class="btn text-center">
@@ -63,23 +63,24 @@
       </div>
       <div class="supplierR col-xs-12 col-md-8">
         <div class="club">
-          <h1>您好, 我是Compass Travel Club！</h1>
+          {{supplier.description}}
+          <!--<h1>您好, 我是Compass Travel Club！</h1>
           <p class="pad">Taipei · 成为会员时间：十一月 2012</p>
           <p>I was born and raised in Taiwan and lived overseas for many years in London, NZ and 1 wonderful year in Thailand. I have been traveling in London and Williton and Bangkok and stayed with many amazing people and families. I love airbnb, and I hope you will enjoy the airbnb experience, too! </p>
           <p>I love the music, art, graphic design and paint, ocean, beach, surf and Taiwanese local food and fruits. </p>
-          <p>I hope you have a chance to explore the amazing nature in Taiwan. I look forward to meeting you:) ciao!</p>
+          <p>I hope you have a chance to explore the amazing nature in Taiwan. I look forward to meeting you:) ciao!</p>-->
         </div>
         <div class="subnav">
-          <div class="left">Compass Travel Club发布的产品</div>
+          <div class="left">{{supplier.name}}发布的产品</div>
           <!-- Modified by Goddy 使用 class="list-unstyled" 来设置无点无序列表 -->
           <div class="navL pull-right">
             <ul class="list-unstyled list-inline">
-              <li><a href="#">推荐</a></li>
-              <li><a href="#">人气</a></li>
-              <li><a href="#">销量</a></li>
-              <li><a href="#">信用</a></li>
-              <li><a class="tj" href="#">最新</a></li>
-              <li><a href="#">价格</a></li>
+              <li><a id="def" href="?order=def">推荐</a></li>
+              <li><a id="pop" href="?order=pop">人气</a></li>
+              <li><a id="sales" href="?order=sales">销量</a></li>
+              <li><a id="honor" href="?order=honor">信用</a></li>
+              <li><a id="new" href="?order=new">最新</a></li>
+              <li><a id="price" href="?order=price">价格</a></li>
             </ul>
           </div>
           <!--<div class="navL">
@@ -94,48 +95,30 @@
           </div>--> 
         </div>
         <div class="row">
+          {% for product in products.object_list %}
           <div class="col-xs-12 col-md-6">
             <div class="thumbnail">
-              <a href="/product/1000/show/" class="frame"><span class="img-vertical-middler"></span><img src="/static/images/desktop/supplier/ly_P1.jpg" class="img-responsive" /> </a>
+              <a href="/product/{{product.id}}/show/" class="frame"><span class="img-vertical-middler"></span><img src="{{ STATIC_URL }}images/product/{{product.pics}}" class="img-responsive" /> </a>
               <div class="caption">
-                <h2 class="text-left"><a href="#"><strong>马尔代夫游艇1日</strong><span>海岛 游艇</span></a></h2>
-                <div class="price"><strong>¥299</strong><span>每人</span></div>
+                <h2 class="text-left"><a href="#"><strong>{{product.name}}</strong><span><br/>{{product.tags}}</span></a></h2>
+                <div class="price"><strong>¥{{product.price_by_one}}</strong><span>每人</span></div>
               </div>
             </div>
           </div>
-          <div class="col-xs-12 col-md-6">
-            <div class="thumbnail">
-              <a href="/product/1000/show/" class="frame"><span class="img-vertical-middler"></span><img src="/static/images/desktop/supplier/ly_P2.jpg" class="img-responsive img-rounded" /> </a>
-              <div class="caption">
-                <h2 class="text-left"><a href="#"><strong>马尔代夫游艇1日</strong><span>海岛 游艇</span></a></h2>
-                <div class="price"><strong>¥299</strong><span>每人</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <div class="thumbnail">
-              <a href="/product/1000/show/" class="frame"><span class="img-vertical-middler"></span><img src="/static/images/desktop/supplier/ly_P1.jpg" class="img-responsive" /> </a>
-              <div class="caption">
-                <h2 class="text-left"><a href="#"><strong>马尔代夫游艇1日</strong><span>海岛 游艇</span></a></h2>
-                <div class="price"><strong>¥299</strong><span>每人</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <div class="thumbnail">
-              <a href="/product/1000/show/" class="frame"><span class="img-vertical-middler"></span><img src="/static/images/desktop/supplier/ly_P2.jpg" class="img-responsive" /> </a>
-              <div class="caption">
-                <h2 class="text-left"><a href="#"><strong>马尔代夫游艇1日</strong><span>海岛 游艇</span></a></h2>
-                <div class="price"><strong>¥299</strong><span>每人</span></div>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
+        {% with products as pages %}
+          {% include "util/pagination.html" %}
+        {% endwith%}
       </div>
     </div>
   </div>
 </div>
 </div>
 
-
+<script>
+$(function(){
+   $('#{{order}}').addClass("tj");
+})
+</script>
 {% endblock %}
